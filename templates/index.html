@@ -1,0 +1,422 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--^======= Favicons ======= -->
+    <link href="{% static 'images/Logo.jpg.png' %}" rel="icon">
+    <link href="{% static 'imgs/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- *============================= GOOGLE FONTS ============================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+
+    <!--^======= Vendor CSS Files ======= -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--^======= Main CSS File ======= -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>ALHANAA</title>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
+    <!-- ?======================= START NAVBAR ====================== -->
+    <nav id="navbar" class="navbar navbar-expand-lg  navbar-dark fixed-top">
+
+        <div class="container ">
+            <a class="navbar-brand fs-3 logo" href="index.html">AL-HANAA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars nav-icon btn__menu__open"></i>
+                <i class="fa-solid fa-xmark nav-icon btn__menu__close"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
+                    <li class="nav-item ">
+                        <a class="nav-link p-0 active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+    <a class="nav-link p-0 active" aria-current="page" href="#about" href="{% url 'about' %}">About</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link p-0" href="#Collection" target="_self">Collection</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link p-0" href="{% url 'products' %}" target="_blank">Products</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link p-0" href="{% url 'contact' %}" target="_blank">Contact</a>
+</li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent-navbar");
+    } else {
+      navbar.classList.add("transparent-navbar");
+    }
+  });
+</script>
+   
+<!-- ?======================= START HOME ====================== -->
+<section class="w-100 vh-100" id="home">
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade position-relative" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="content1 w-100 vh-100"></div>
+                <div class="carousel-caption d-flex justify-content-center align-items-center layer">
+                    <div class="inner">
+                        <div class="w-100 vh-100">
+                            <!--<video autoplay loop muted playsinline class="video-background">
+                                <source src="images/IMG_2872.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>-->
+                            <!--<img src="./images/detail-rice-plant-sunset-valencia-with-plantation-out-focus-rice-grains-plant-seed.jpg" alt="">-->
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <h1 class="col-sm-12">AL-HANAA</h1>
+                        <p>For Agricultural Development</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="content2 w-100 vh-100"></div>
+                <div class="carousel-caption d-flex justify-content-center align-items-center layer">
+                    <div class="inner">
+                        <div class="w-100 vh-100">
+                            <!--<video autoplay loop muted playsinline class="video-background">
+                                <source src="images/IMG_2856.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>-->
+                            <!--<img src="/images//cultivated-field-sunset.jpg" alt="">-->
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <h1 class="col-sm-12">AL-HANAA</h1>
+                        <p>For Agriculture Development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        Previous Button
+        <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>-->
+
+        <!-- Next Button -->
+        <!--<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>-->
+    </div>
+</section>
+    
+<!-- ?======================= START About ====================== -->
+<section id="About" class="testimonials position-relative py-5 bg__image">
+    <div class="container position-relative">
+        <div class="section__title d-flex-center">
+            <h3 class="position-relative text-capitalize text-center py-sm-5">About</h3>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+           
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="py-5 text-center since">
+                        <!-- هنا تم إضافة الكلاس .image-fade-in لإخفاء الصورة حتى تظهر عند التمرير -->
+                        <img src="{% static 'images/Logo.jpg.png' %}" class="rounded-circle w-25 my-logo image-fade-in"
+                            alt="Testimonial Xavi Alonso Curabitur arcu erat">
+                        <h3 class="my-3 text-black since">Founded in 2010</h3>
+                        <!-- هنا تم إضافة الكلاس .text-fade-in لإخفاء النصوص -->
+                        <p class="slider__text mx-auto my-text text-fade-in">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur molestias assumenda praesentium dicta libero neque exercitationem maxime optio cupiditate a, quaerat quam numquam consectetur, inventore itaque veniam, ab dolor. Quas.
+                        </p>
+                        <br>
+                        <p class="slider__text mx-auto my-text text-fade-in">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate amet error impedit voluptatem, dolorum optio! Eligendi natus vitae a neque nostrum, quam eos mollitia dicta asperiores accusantium quo consequuntur dolor?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container  ">
+        <div class="section__title d-flex-center">
+            <h3 class="position-relative text-capitalize text-center">certificates</h3>
+        </div>
+        <div class="row g-4 ">
+            <div class="col-lg-12  py-5 text-center">
+                <img src="{% static 'images/2.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ?======================= START COUNTERS ====================== -->
+<section class="counters position-relative bg__image mt-5 mb-5">
+        <div class="overlay"></div>
+        <div class="container position-relative">
+            <div class="row gy-5 py-3">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counters__card text-center">
+                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <div class="counter-num">
+                            <p class="fs-2 mb-1" data-target="150">0</p> 
+                            <p class="text-uppercase mb-1">WORKing employees</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-3 col-sm-6">
+                    <div class="counters__card text-center">
+                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div class="counter-num">
+                            <p class="fs-2 mb-1" data-target="15">0</p>
+                            <p class="text-uppercase mb-1">YEARS OF EXPERIENCE</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-3 col-sm-6">
+                    <div class="counters__card text-center">
+                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                        <div class="counter-num">
+                            <p class="fs-2 mb-1" data-target="250000">0</p>
+                            <p class="mb-1">TONS OF EXPORTED FRESH PRODUCTS</p>
+                        </div>
+                    </div>
+                </div>
+    
+                
+    
+                <div class="col-md-3 col-sm-6">
+                    <div class="counters__card text-center">
+                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div class="counter-num">
+                            <p class="fs-2 mb-1" data-target="50">0</p>
+                            <p class="mb-1">CLIENTS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+<!-- ?======================= START Collections ====================== -->
+<section id="Collection" class="works section-padding mb-5">
+    <div class="container">
+        <div class="section__title d-flex-center">
+            <h3 class="position-relative text-capitalize text-center">Collections </h3>
+        </div>
+
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+        <div class="row g-4 my-collection">
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/Grapes-product.jpg' %}" alt="Grapes fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#grapes">
+                            <h6 class="mb-3 fw-bold">Grapes</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/IMG_2874.jpg' %}" alt="Orang fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#orange"><h6 class="mb-3 fw-bold">Orange</h6></a>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/medjol-product.jpg' %}" alt="Dates fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#madjool"><h6 class="mb-3 fw-bold">Madjool Dates</h6></a>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/grapefuot-product.jpg' %}" alt="grapefuot fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#grapefruit"><h6 class="mb-3 fw-bold">Grapefruit</h6></a>
+                    </div>
+                </div>
+            </div>    
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/mango-product.jpg' %}" alt="Mango fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#mango"><h6 class="mb-3 fw-bold">Mango</h6></a>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/dates-product.jpg' %}" alt="Dates fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#barhi"><h6 class="mb-3 fw-bold">Barhi Dates</h6></a>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/olive-product.jpg' %}" alt="Olive fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#olive"><h6 class="mb-3 fw-bold">Olive</h6></a>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/mandarin-product.jpg' %}" alt="mandarin fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#mandarin"><h6 class="mb-3 fw-bold">Mandarin</h6></a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+</section>
+    <!-- ?======================= START About Layer ====================== -->
+    <section class=" testimonials position-relative py-5  my-bg">
+        <div class="container position-relative">
+            <div class="row d-flex align-items-center">
+                <div class="col-4  bg-about  shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="sub-about">
+                        <h2 class="text-center border-bottom">Alhanaa Farms</h2>
+                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4 ">
+                            <i class="fa-solid fa-phone"></i>
+                            <h3>+201093395073</h3>
+                        </div>
+                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4">
+                            <i class="fa-solid fa-fax"></i>
+                            <h3>+201093395073</h3>
+                        </div>
+                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4">
+                            <i class="fa-solid fa-envelope"></i>
+                            <h3>Info@alhanaagri.com</h3>
+                        </div>
+                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h3>+201093395073</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- ?======================= START FOOTER ====================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About AL-HANAA</h4>
+                    <p>Founded in 2010, AL-HANAA is dedicated to agricultural development and providing high-quality fresh products to clients worldwide.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100064835928360" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#Collection">Collection</a></li>
+                        <li><a href="./Products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-phone me-2"></i> +201093395073</li>
+                        <li><i class="fa-solid fa-fax me-2"></i> +201093395073</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> Info@alhanaagri.com</li>
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Egypt</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright__box">
+                <p class="copyright">© Copyright-2025 <span class="fw-bold">ALHANAA</span>. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+  
+    <!-- ?======================= BTN TOP ====================== -->
+    <a href="#home" id="btn-top" class="btn btn-primary rounded-circle p-0  btn__top ">
+    <i class="fa-solid fa-arrow-up position-absolute top-50 left-50 translate-middle"></i>
+    </a>
+    <!--^======= JS Files ======= -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
