@@ -1682,3 +1682,17 @@ background-size: 100% 100%;
 .about span {
   font-size: 100px;
 }
+@keyframes wipeInRight {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.wipe-in-right {
+  animation: wipeInRight 1s ease-out forwards;
+}
