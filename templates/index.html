@@ -48,7 +48,7 @@
                         <a class="nav-link p-0 active" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-    <a class="nav-link p-0 active" aria-current="page"  href="{% url 'about' %}">About</a>
+    <a class="nav-link p-0" aria-current="page"  href="{% url 'about' %}">About</a>
 </li>
 <li class="nav-item">
     <a class="nav-link p-0" href="#Collection" target="_self">Collection</a>
@@ -344,33 +344,55 @@
 
 </section>
     <!-- ?======================= START About Layer ====================== -->
-    <section class=" testimonials position-relative py-5  my-bg">
-        <div class="container position-relative">
-            <div class="row d-flex align-items-center">
-                <div class="col-4  bg-about  shadow-lg p-3 mb-5 bg-body rounded">
-                    <div class="sub-about">
-                        <h2 class="text-center border-bottom">Alhanaa Farms</h2>
-                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4 ">
-                            <i class="fa-solid fa-phone"></i>
-                            <h3>+201093395073</h3>
-                        </div>
-                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4">
-                            <i class="fa-solid fa-fax"></i>
-                            <h3>+201093395073</h3>
-                        </div>
-                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4">
-                            <i class="fa-solid fa-envelope"></i>
-                            <h3>Info@alhanaagri.com</h3>
-                        </div>
-                        <div class="subabout-item d-flex justify-content-evenly align-items-center mt-4 mb-4">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <h3>+201093395073</h3>
-                        </div>
-                    </div>
-                </div>
+<section class="testimonials position-relative py-5 my-bg text-white">
+  <div class="container position-relative">
+    <div class="row">
+      <!-- اللاير على الشمال -->
+      <div class="col-12 col-md-5 me-auto bg-about shadow-lg p-5 mb-5 rounded" style="background-color: rgba(0, 0, 0, 0.6); min-height: 400px; font-size: 1.2rem;">
+        <div class="sub-about">
+          <h2 class="text-center border-bottom pb-3 text-white">Alhanaa Farms</h2>
+
+          <div class="subabout-item d-flex flex-column align-items-start gap-4 mt-4">
+            <!-- Phone -->
+            <div class="d-flex align-items-center gap-3">
+              <i class="fa-solid fa-phone text-white fs-5"></i>
+              <span class="text-white">+201093395073</span>
             </div>
-    </section>
-    <!-- ?======================= START VIDEO SECTION ====================== -->
+
+            <!-- WhatsApp -->
+            <div class="d-flex align-items-center gap-3">
+              <i class="fa-brands fa-whatsapp text-white fs-5"></i>
+              <a href="https://wa.me/201093395073" target="_blank" class="text-decoration-none text-white">
+                WhatsApp Chat
+              </a>
+            </div>
+
+            <!-- Email -->
+            <div class="d-flex align-items-center gap-3">
+              <i class="fa-solid fa-envelope text-white fs-5"></i>
+              <a href="mailto:Info@alhanaaagri.com" class="text-decoration-none text-white">
+                Info@alhanaaagri.com
+              </a>
+            </div>
+
+            <!-- Location -->
+            <div class="d-flex align-items-center gap-3">
+              <i class="fa-solid fa-location-dot text-white fs-5"></i>
+              <span class="text-white">Minya, Egypt</span>
+              <a href="https://maps.app.goo.gl/g2a63GK9aP1Vudve9?g_st=iw" target="_blank"
+                class="btn btn-sm btn-outline-light ms-2">
+                Directions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- نهاية اللاير -->
+    </div>
+  </div>
+</section>
+
+    <!-- ?======================= START Map SECTION ====================== -->
 <section class="video-section py-5 bg-light">
   <div class="container">
     <div class="row align-items-center">
@@ -384,7 +406,7 @@
       </div>
 
       <!-- اليمين: الفيديو -->
-<div class="col-md-6 wipe-in-right">
+<div class="col-md-6 ">
   <div class="ratio ratio-4x3 rounded overflow-hidden ">
     <img src="{% static 'images/Alhanaa Map.png' %}" alt="Our Location">
       Your browser does not support the video tag.
@@ -394,7 +416,6 @@
     </div>
   </div>
 </section>
-
     <!-- ?======================= START FOOTER ====================== -->
     <footer class="footer">
         <div class="container">
