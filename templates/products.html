@@ -306,24 +306,50 @@
   </div>  
 </div>
 </section>
-        <!-- ?======================= START FOOTER ====================== -->
-        <footer class="footer py-4 mt-5">
-            <div class="container d__flow-root">
-                <div class="copyright__box text-center">
-                    <p class="copyright mb-2">© Copyright <span class="fw-bold">ALHANAA</span>. All Rights Reserved</p>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                              <a href="https://www.facebook.com/profile.php?id=100064835928360" class="my-links" target="_blank"><i class="fa-brands fa-facebook p p-2 my-icon"></i>
-                                <i class="fa-brands fa-twitter  p-2 my-icon"></i>
-                                <i class="fa-brands fa-instagram p-2 my-icon"></i>
-                                <i class="fa-brands fa-linkedin p-2 my-icon"></i>    
-                            </div
-                        </div>
+
+    <!-- ?======================= START FOOTER ====================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About AL-HANAA</h4>
+                    <p>Founded in 2010, AL-HANAA is dedicated to agricultural development and providing high-quality fresh products to clients worldwide.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100064835928360" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="#Collection">Collection</a></li>
+                        <li><a href="{% url 'products' %}">Products</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-phone me-2"></i> +201093395073</li>
+                        <li><i class="fa-solid fa-fax me-2"></i> +201093395073</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> Info@alhanaagri.com</li>
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Egypt</li>
+                    </ul>
+                </div>
             </div>
-        </footer>
+            
+            <div class="copyright__box">
+                <p class="copyright">© Copyright-2025 <span class="fw-bold">ALHANAA</span>. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    
     <!--^======= JS Files ======= -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>

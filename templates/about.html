@@ -380,7 +380,7 @@ Trust & Accountability:  To act in transparent, trustworthy manner that earns th
     </div>
   </section>
 
-  <!-- ?======================= START FOOTER ====================== -->
+    <!-- ?======================= START FOOTER ====================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -398,11 +398,11 @@ Trust & Accountability:  To act in transparent, trustworthy manner that earns th
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#About">About</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
                         <li><a href="#Collection">Collection</a></li>
-                        <li><a href="./Products.html">Products</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{% url 'products' %}">Products</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -422,8 +422,6 @@ Trust & Accountability:  To act in transparent, trustworthy manner that earns th
             </div>
         </div>
     </footer>
-  
-
     <!-- ?======================= BTN TOP ====================== -->
     <a href="#" id="btn-top" class="btn btn-primary rounded-circle p-0  btn__top ">
     <i class="fa-solid fa-arrow-up position-absolute top-50 left-50 translate-middle"></i>
