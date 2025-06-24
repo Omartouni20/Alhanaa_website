@@ -348,12 +348,14 @@
   <div class="container position-relative">
     <div class="row">
       <!-- اللاير على الشمال -->
-      <div class="col-12 col-md-5 me-auto bg-about shadow-lg p-5 mb-5 rounded" style="background-color: rgba(0, 0, 0, 0.6); min-height: 400px; font-size: 1.2rem;">
+      <div class="col-12 col-md-5 me-auto bg-about shadow-lg p-5 mb-5 rounded"
+           style="background-color: rgba(0, 0, 0, 0.6); min-height: 400px; font-size: 1.2rem;">
         <div class="sub-about">
           <h2 class="text-center border-bottom pb-3 text-white">Alhanaa Farms</h2>
 
           <div class="subabout-item d-flex flex-column align-items-start gap-4 mt-4">
-            <!-- Phone -->
+
+            <!-- Phone (ثابت) -->
             <div class="d-flex align-items-center gap-3">
               <i class="fa-solid fa-phone text-white fs-5"></i>
               <span class="text-white">+201093395073</span>
@@ -362,7 +364,11 @@
             <!-- WhatsApp -->
             <div class="d-flex align-items-center gap-3">
               <i class="fa-brands fa-whatsapp text-white fs-5"></i>
-              <a href="https://wa.me/201093395073" target="_blank" class="text-decoration-none text-white">
+              <a href="https://wa.me/201093395073" target="_blank"
+                 class="text-white text-decoration-none fw-bold transition"
+                 style="transition: all 0.3s ease;"
+                 onmouseover="this.style.color='#25D366'"
+                 onmouseout="this.style.color='white'">
                 WhatsApp Chat
               </a>
             </div>
@@ -370,7 +376,11 @@
             <!-- Email -->
             <div class="d-flex align-items-center gap-3">
               <i class="fa-solid fa-envelope text-white fs-5"></i>
-              <a href="mailto:Info@alhanaaagri.com" class="text-decoration-none text-white">
+              <a href="mailto:Info@alhanaaagri.com" target="_blank"
+                 class="text-white text-decoration-none fw-bold transition"
+                 style="transition: all 0.3s ease;"
+                 onmouseover="this.style.color='#0dcaf0'"
+                 onmouseout="this.style.color='white'">
                 Info@alhanaaagri.com
               </a>
             </div>
@@ -378,12 +388,15 @@
             <!-- Location -->
             <div class="d-flex align-items-center gap-3">
               <i class="fa-solid fa-location-dot text-white fs-5"></i>
-              <span class="text-white">Minya, Egypt</span>
               <a href="https://maps.app.goo.gl/g2a63GK9aP1Vudve9?g_st=iw" target="_blank"
-                class="btn btn-sm btn-outline-light ms-2">
-                Directions
+                 class="text-white text-decoration-none fw-bold transition"
+                 style="transition: all 0.3s ease;"
+                 onmouseover="this.style.color='#ffc107'"
+                 onmouseout="this.style.color='white'">
+                Minya, Egypt
               </a>
             </div>
+
           </div>
         </div>
       </div>

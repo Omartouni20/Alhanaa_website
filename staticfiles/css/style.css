@@ -1667,3 +1667,29 @@ background-size: 100% 100%;
 .wipe-in-right {
   animation: wipeInRight 1s ease-out forwards;
 }
+.animated-underline {
+  position: relative;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -ms-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
