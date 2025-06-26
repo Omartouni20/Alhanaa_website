@@ -1167,6 +1167,7 @@ background-size: cover;
 background-attachment: fixed;
 background-repeat: no-repeat;
 background-position: center;
+overflow: hidden;
 }
 .bgOfPage h2 {
 color: #ffffff;
@@ -1199,6 +1200,29 @@ background-repeat: no-repeat;
 position: absolute;
 margin-left: 10px;
 }
+.Grapefruit .my-accordin h1::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/grapefruit_3523482.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-left: 10px;
+}
+.Dates .my-accordin h1::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/datess.png"); /* تأكد إن الصورة موجودة */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-left: 10px;
+}
+
 .Mandarin .my-accordin h1::after {
 content: "";
 display: inline-block;
@@ -1228,6 +1252,22 @@ width: 20px;
 .ornage-accbtn {
 --bs-accordion-btn-bg: #275e33c5;
 --bs-accordion-active-bg: #ff8f33;
+}
+.grapefruit-accbtn {
+--bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-active-bg: #EE6161; 
+}
+.flame-accbtn {
+--bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-active-bg: #C23F48;   
+}
+.dates-accbtn {
+--bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-active-bg: #E5B71F;  
+}
+.madjool-accbtn {
+--bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-active-bg: #94553C;   
 }
 .mind-accbtn {
 --bs-accordion-btn-bg: #275e33c5;
@@ -1705,4 +1745,202 @@ font-size: 50px;
 background-image: url(../images/rm309-adj-05.jpg);
 background-attachment: fixed;
 background-size: 100% 100%;
+}
+/*Start About*/
+      /* Custom styles for the About page */
+      .about-section {
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(247, 247, 247, 0.8), rgba(255, 255, 255, 0.9));
+      }
+      
+      /* Modern circular decorations */
+      .circle-decoration {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(39, 94, 51, 0.05), transparent);
+        z-index: 0;
+      }
+      
+      .circle-1 {
+        width: 400px;
+        height: 400px;
+        top: 10%;
+        left: -100px;
+      }
+      
+      .circle-2 {
+        width: 300px;
+        height: 300px;
+        bottom: 20%;
+        right: -50px;
+      }
+      
+      /* 3D Vertical Line with animated dot */
+      .vertical-line {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 6px;
+        height: 100%;
+        background: linear-gradient(to right, rgba(39, 94, 51, 0.2), rgba(39, 94, 51, 0.8), rgba(39, 94, 51, 0.2));
+        transform: translateX(-50%);
+        box-shadow: 0 0 15px rgba(39, 94, 51, 0.3);
+        z-index: 1;
+        overflow: hidden;
+      }
+      
+      .vertical-line::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #f7af29;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px rgba(247, 175, 41, 0.8);
+        animation: dot-travel 8s infinite ease-in-out;
+      }
+      
+      @keyframes dot-travel {
+        0% { top: -10px; }
+        50% { top: 100%; }
+        50.1% { top: -10px; }
+        100% { top: -10px; }
+      }
+      
+      /* Content blocks */
+      .about-block {
+        padding: 3rem 0;
+        position: relative;
+      }
+      
+      .about-title {
+        font-weight: 700;
+        color: #275e33;
+        margin-bottom: 1.5rem;
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .about-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(to right, #275e33, #f7af29);
+        transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .about-right .about-title::after {
+        left: auto;
+        right: 0;
+        background: linear-gradient(to left, #275e33, #f7af29);
+      }
+      
+      .about-content {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        z-index: 2;
+        border-top: 3px solid transparent;
+        overflow: hidden;
+      }
+      
+      .about-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(to right, #275e33, #f7af29);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s ease;
+      }
+      
+      .about-right .about-content::before {
+        transform-origin: right;
+        background: linear-gradient(to left, #275e33, #f7af29);
+      }
+      
+      .about-content:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      .about-content:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .about-content:hover .about-title::after {
+        width: 100px;
+      }
+      
+      .about-content p {
+        line-height: 1.8;
+        color: #555;
+        font-size: 1.05rem;
+      }
+      
+      /* Enhanced header section */
+      .products {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .bgOfPage {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .bgOfPage h2 {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        position: relative;
+        z-index: 2;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .vertical-line {
+          left: 30px;
+        }
+        
+        .about-right .about-title::after {
+          left: 0;
+          right: auto;
+          background: linear-gradient(to right, #275e33, #f7af29);
+        }
+        
+        .about-content {
+          margin-bottom: 2rem;
+          padding: 2rem;
+        }
+        
+        .about-title {
+          font-size: 1.5rem;
+        }
+        
+        .bgOfPage h2 {
+          font-size: 2.5rem;
+        }
+      }
+.bold_text {
+  font-size: 16px;
+  font-weight: bolder;
+  color: #275E33;
 }

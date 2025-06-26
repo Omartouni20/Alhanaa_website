@@ -158,8 +158,8 @@
                         <h3 class="my-3 text-black since">Founded in 2010</h3>
                         <!-- هنا تم إضافة الكلاس .text-fade-in لإخفاء النصوص -->
                         <p class="slider__text mx-auto my-text text-fade-in">
-                        Al Hanaa for Agricultural Development, a leading agricultural company committed to producing high-quality fruits and seasonal crops in Egypt. Since our founding in 2010, we have been at the forefront of creativity and sustainable growth within the agricultural sector, driven by our vision to become the market leader in the Middle East.
-                        </p>
+Al Hanaa for Agricultural Development
+Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural company focused on sustainable farming, premium quality, and international reach. Since 2010, we’ve specialized in cultivating fresh fruits and processed products — all managed through a fully integrated supply chain. Backed by the legacy of the El Morshedy Group, we combine innovation, expertise, and environmental responsibility to deliver excellence from soil to shelf. Whether you’re a local partner or a global client, Al Hanaa is your trusted source for world-class agricultural products.                        </p>
                         <br>
                         <!--<p class="slider__text mx-auto my-text text-fade-in">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate amet error impedit voluptatem, dolorum optio! Eligendi natus vitae a neque nostrum, quam eos mollitia dicta asperiores accusantium quo consequuntur dolor?
@@ -249,18 +249,6 @@
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
         <div class="row g-4 my-collection">
-            <div class="col-md-6 col-lg-4 ">
-                <div class="works__box border d-flex position-relative overflow-hidden">
-                    <figure class=" mb-0 box__image ">
-                        <img class="d-block w-100 " src="{% static 'images/Grapes-product.jpg' %}" alt="Grapes fruit">
-                    </figure>
-                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
-                        <a href="{% url 'products' %}#grapes">
-                            <h6 class="mb-3 fw-bold">Grapes</h6>
-                        </a>
-                    </div>
-                </div>
-            </div>  
 
             <div class="col-md-6 col-lg-4 ">
                 <div class="works__box border d-flex position-relative overflow-hidden">
@@ -273,13 +261,14 @@
                 </div>
             </div> 
 
+
             <div class="col-md-6 col-lg-4 ">
                 <div class="works__box border d-flex position-relative overflow-hidden">
                     <figure class=" mb-0 box__image ">
-                        <img class="d-block w-100 " src="{% static 'images/medjol-product.jpg' %}" alt="Dates fruit">
+                        <img class="d-block w-100 " src="{% static 'images/mandarin-product.jpg' %}" alt="mandarin fruit">
                     </figure>
                     <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
-                        <a href="{% url 'products' %}#madjool"><h6 class="mb-3 fw-bold">Madjool Dates</h6></a>
+                        <a href="{% url 'products' %}#mandarin"><h6 class="mb-3 fw-bold">Mandarin</h6></a>
                     </div>
                 </div>
             </div> 
@@ -293,8 +282,36 @@
                         <a href="{% url 'products' %}#grapefruit"><h6 class="mb-3 fw-bold">Grapefruit</h6></a>
                     </div>
                 </div>
-            </div>    
+            </div>  
 
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/Grapes-product.jpg' %}" alt="Grapes fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#grapes">
+                            <h6 class="mb-3 fw-bold">Grapes</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>  
+
+
+
+            <div class="col-md-6 col-lg-4 ">
+                <div class="works__box border d-flex position-relative overflow-hidden">
+                    <figure class=" mb-0 box__image ">
+                        <img class="d-block w-100 " src="{% static 'images/medjol-product.jpg' %}" alt="Dates fruit">
+                    </figure>
+                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
+                        <a href="{% url 'products' %}#dates"><h6 class="mb-3 fw-bold">Madjool Dates</h6></a>
+                    </div>
+                </div>
+            </div> 
+
+  
+<!--
             <div class="col-md-6 col-lg-4 ">
                 <div class="works__box border d-flex position-relative overflow-hidden">
                     <figure class=" mb-0 box__image ">
@@ -304,7 +321,7 @@
                         <a href="{% url 'products' %}#mango"><h6 class="mb-3 fw-bold">Mango</h6></a>
                     </div>
                 </div>
-            </div> 
+            </div> -->
 
             <div class="col-md-6 col-lg-4 ">
                 <div class="works__box border d-flex position-relative overflow-hidden">
@@ -312,12 +329,12 @@
                         <img class="d-block w-100 " src="{% static 'images/dates-product.jpg' %}" alt="Dates fruit">
                     </figure>
                     <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
-                        <a href="{% url 'products' %}#barhi"><h6 class="mb-3 fw-bold">Barhi Dates</h6></a>
+                        <a href="{% url 'products' %}#dates"><h6 class="mb-3 fw-bold">Barhi Dates</h6></a>
                     </div>
                 </div>
             </div> 
 
-            <div class="col-md-6 col-lg-4 ">
+            <!--<div class="col-md-6 col-lg-4 ">
                 <div class="works__box border d-flex position-relative overflow-hidden">
                     <figure class=" mb-0 box__image ">
                         <img class="d-block w-100 " src="{% static 'images/olive-product.jpg' %}" alt="Olive fruit">
@@ -326,18 +343,9 @@
                         <a href="{% url 'products' %}#olive"><h6 class="mb-3 fw-bold">Olive</h6></a>
                     </div>
                 </div>
-            </div>  
+            </div>  -->
 
-            <div class="col-md-6 col-lg-4 ">
-                <div class="works__box border d-flex position-relative overflow-hidden">
-                    <figure class=" mb-0 box__image ">
-                        <img class="d-block w-100 " src="{% static 'images/mandarin-product.jpg' %}" alt="mandarin fruit">
-                    </figure>
-                    <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
-                        <a href="{% url 'products' %}#mandarin"><h6 class="mb-3 fw-bold">Mandarin</h6></a>
-                    </div>
-                </div>
-            </div> 
+
         </div>
     </div>
 </div>
