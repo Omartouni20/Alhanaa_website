@@ -157,11 +157,11 @@
                         <!-- هنا تم إضافة الكلاس .image-fade-in لإخفاء الصورة حتى تظهر عند التمرير -->
                         <img src="{% static 'images/Logo.jpg.png' %}" class="rounded-circle w-25 my-logo image-fade-in"
                             alt="Testimonial Xavi Alonso Curabitur arcu erat">
-                        <h3 class="my-3 text-black since">Founded in 2010</h3>
+                        <!--<h3 class="my-3 text-black since">Founded in 2010</h3>-->
                         <!-- هنا تم إضافة الكلاس .text-fade-in لإخفاء النصوص -->
                         <p class="slider__text mx-auto my-text text-fade-in">
 Al Hanaa for Agricultural Development
-Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural company focused on sustainable farming, premium quality, and international reach. Since 2010, we’ve specialized in cultivating fresh fruits and processed products — all managed through a fully integrated supply chain. Backed by the legacy of the El Morshedy Group, we combine innovation, expertise, and environmental responsibility to deliver excellence from soil to shelf. Whether you’re a local partner or a global client, Al Hanaa is your trusted source for world-class agricultural products.                        </p>
+Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural company focused on sustainable farming, premium quality, and international reach. Since 2010, we’ve specialized in cultivating fresh fruits and processed products all managed through a fully integrated supply chain. Backed by the legacy of the El Morshedy Group, we combine innovation, expertise, and environmental responsibility to deliver excellence from soil to shelf. Whether you’re a local partner or a global client, Al Hanaa is your trusted source for world-class agricultural products.                        </p>
                         <br>
                         <!--<p class="slider__text mx-auto my-text text-fade-in">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate amet error impedit voluptatem, dolorum optio! Eligendi natus vitae a neque nostrum, quam eos mollitia dicta asperiores accusantium quo consequuntur dolor?
@@ -416,29 +416,27 @@ Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
 </section>
 
     <!-- ?======================= START Map SECTION ====================== -->
-<section class="video-section py-5 bg-light">
+     <section class="video-section py-5 bg-light">
   <div class="container">
-    <div class="row align-items-center">
-      <!-- اليسار: رابط الموقع -->
-      <div class="col-md-6 mb-4 mb-md-0 animate__animated animate__fadeInLeft">
+    <div class="row align-items-center g-4">
+      <!-- اليسار: رابط GPS -->
+      <div class="col-md-6 animate__animated animate__fadeInLeft">
         <h3 class="mb-3 text-uppercase fw-bold">Explore Our Location</h3>
-        <!--<p class="mb-3">Discover our journey, mission, and products in detail.</p>-->
-        <a href="https://www.google.com/maps?q=%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D9%87%D9%86%D8%A7%D8%A1+%D9%84%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A%D8%A9%D8%8C+Unnamed+Road,+%D8%A7%D9%84%D9%85%D9%86%D9%8A%D8%A7%D8%8C%D8%8C+%D9%85%D8%B1%D9%83%D8%B2+%D9%85%D9%84%D9%88%D9%89&ftid=0x1444c912303dab59:0x73c062635c3f3e1c&entry=gps&lucs=,94224825,94227247,94227248,94231188,47071704,47069508,94218641,94203019,47084304&g_ep=CAISEjI1LjI0LjEuNzY5MjczNTU2MBgAIIgnKlEsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyMDMwMTksNDcwODQzMDRCAkVH&skid=10dc1adc-025f-4b3e-8ff7-a1892bbceefb&g_st=iw" target="_blank" class="btn btn-success px-4 py-2">
+        <a href="https://www.google.com/maps?..." target="_blank" class="btn btn-success px-4 py-2">
           GPS <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
         </a>
       </div>
 
-      <!-- اليمين: الفيديو -->
-<div class="col-md-6 ">
-  <div class="ratio ratio-4x3 rounded overflow-hidden ">
-    <img src="{% static 'images/Alhanaa Map.png' %}" alt="Our Location">
-      Your browser does not support the video tag.
-  </div>
-</div>
-
+      <!-- اليمين: الصورة -->
+      <div class="col-md-6">
+        <div class="ratio ratio-4x3 rounded overflow-hidden">
+          <img src="{% static 'images/Alhanaa Map.png' %}" alt="Our Location">
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
     <!-- ?======================= START FOOTER ====================== -->
     <footer class="footer">
         <div class="container">
