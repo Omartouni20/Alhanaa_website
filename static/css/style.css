@@ -492,12 +492,12 @@ button[aria-expanded="true"] .btn__menu__close {
 }
 
 .content1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../static/images/cultivated-field-sunset.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../static/images/detail-rice-plant-sunset-valencia-with-plantation-out-focus-rice-grains-plant-seed.jpg);
   background-size: cover;
 }
 
 .content2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/detail-rice-plant-sunset-valencia-with-plantation-out-focus-rice-grains-plant-seed.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../static/images/cultivated-field-sunset.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -1257,7 +1257,7 @@ width: 20px;
 }
 .dates-accbtn {
 --bs-accordion-btn-bg:#3A986C;
---bs-accordion-active-bg: #E5B71F;  
+--bs-accordion-active-bg: #ffc400;  
 }
 .madjool-accbtn {
 --bs-accordion-btn-bg:#3A986C;
