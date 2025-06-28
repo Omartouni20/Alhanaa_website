@@ -1244,36 +1244,36 @@ height: 20px;
 width: 20px;
 }
 .ornage-accbtn {
---bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-btn-bg: #3A986C;
 --bs-accordion-active-bg: #ff8f33;
 }
 .grapefruit-accbtn {
---bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-btn-bg: #3A986C;
 --bs-accordion-active-bg: #EE6161; 
 }
 .flame-accbtn {
---bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-btn-bg:#3A986C;
 --bs-accordion-active-bg: #C23F48;   
 }
 .dates-accbtn {
---bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-btn-bg:#3A986C;
 --bs-accordion-active-bg: #E5B71F;  
 }
 .madjool-accbtn {
---bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-btn-bg:#3A986C;
 --bs-accordion-active-bg: #94553C;   
 }
 .mind-accbtn {
---bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-btn-bg:#3A986C;
 --bs-accordion-active-bg: #ff8f33;
 }
 .grape-accbtn button {
---bs-accordion-btn-bg: #275e33c5;
+--bs-accordion-btn-bg:#3A986C;
 --bs-accordion-active-bg: #6e54a3;
 }
 .product-accbtn {
---bs-accordion-btn-bg: #275e33c5;
---bs-accordion-active-bg: #275e33c5;
+--bs-accordion-btn-bg:#3A986C;
+--bs-accordion-active-bg:#3A986C;
 }
 .contact-bg {
 background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/phone-4974179_1920.jpg);
@@ -1376,7 +1376,7 @@ background-color: rgba(95, 61, 61, 0.7) !important;
 }
 /* ?================== START  FOOTER =============== */
 .footer {
-background-color: var(--bg-footer);
+background-color:#3A986C;
 color: var(--color-white);
 padding: 3rem 0 1.5rem;
 position: relative;
