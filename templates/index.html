@@ -20,6 +20,7 @@
       rel="stylesheet">
 
     <!--^======= Vendor CSS Files ======= -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -101,9 +102,10 @@
                     <div class="comment">
                         <h1 class="col-sm-12">AL-HANAA</h1>
                         <p>For Agricultural Development</p>
-<h5 class="mt-4 text-white text-center" style="font-family: 'Georgia', serif; font-size: 1.25rem;">
+<h5 class="mt-4 text-white text-center" style="font-family: 'Arial', sans-serif; font-size: 0.95rem;">
   Join us in shaping the future of agriculture. Together, we can cultivate a sustainable tomorrow
 </h5>
+
                     </div>
                 </div>
             </div>
@@ -171,76 +173,100 @@ Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
             </div>
         </div>
     </div>
-    <div class="container  ">
-        <div class="section__title d-flex-center">
-            <h3 class="position-relative text-capitalize text-center">certificates</h3>
+<div class="container my-5">
+    <div class="section__title d-flex-center mb-4">
+        <h3 class="position-relative text-capitalize text-center">certificates</h3>
+    </div>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white shadow rounded p-3 text-center h-100">
+                <img src="{% static 'images/2.png' %}" alt="Certificate 1" class="img-fluid mb-2" style="height: 120px; object-fit: contain;">
+                <h6 class="mb-0">GGN: 4059883472271</h6>
+            </div>
         </div>
-        <div class="row g-4 ">
-            <div class="col-lg-12  py-5 text-center">
-                <img src="{% static 'images/2.png' %}" alt="">
-                <h6>GGN: 4059883472271 </h6>
+        <div class="col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white shadow rounded p-3 text-center h-100">
+                <img src="{% static 'images/3.png' %}" alt="Certificate 2" class="img-fluid" style="height: 120px; object-fit: contain;">
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-white shadow rounded p-3 text-center h-100">
+                <img src="{% static 'images/4.png' %}" alt="Certificate 3" class="img-fluid" style="height: 120px; object-fit: contain;">
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white shadow rounded p-3 text-center h-100">
+                <img src="{% static 'images/5.png' %}" alt="Certificate 4" class="img-fluid" style="height: 120px; object-fit: contain;">
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white shadow rounded p-3 text-center h-100">
+                <img src="{% static 'images/6.png' %}" alt="Certificate 5" class="img-fluid" style="height: 120px; object-fit: contain;">
             </div>
         </div>
     </div>
+</div>
+
 </section>
 
     <!-- ?======================= START COUNTERS ====================== -->
 <section class="counters position-relative bg__image mt-5 mb-5">
-        <div class="overlay"></div>
-        <div class="container position-relative">
-            <div class="row gy-5 py-3">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counters__card text-center">
-                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
-                            <i class="fa-solid fa-people-group"></i>
-                        </div>
-                        <div class="counter-num">
-                            <p class="fs-2 mb-1" data-target="150">0</p> 
-                            <p class="text-uppercase mb-1">WORKing employees</p>
-                        </div>
+    <div class="overlay"></div>
+    <div class="container position-relative">
+        <div class="row gy-5 py-3 align-items-stretch">
+        
+            <div class="col-md-3 col-sm-6">
+                <div class="counters__card text-center d-flex flex-column h-100">
+                    <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                        <i class="fa-solid fa-people-group"></i>
                     </div>
-                </div>
-    
-                <div class="col-md-3 col-sm-6">
-                    <div class="counters__card text-center">
-                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
-                            <i class="fa-solid fa-lightbulb"></i>
-                        </div>
-                        <div class="counter-num">
-                            <p class="fs-2 mb-1" data-target="15">0</p>
-                            <p class="text-uppercase mb-1">YEARS OF EXPERIENCE</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-3 col-sm-6">
-                    <div class="counters__card text-center">
-                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
-                            <i class="fa-solid fa-chart-simple"></i>
-                        </div>
-                        <div class="counter-num">
-                            <p class="fs-2 mb-1" data-target="250000">0</p>
-                            <p class="mb-1">TONS OF EXPORTED FRESH PRODUCTS</p>
-                        </div>
-                    </div>
-                </div>
-    
-                
-    
-                <div class="col-md-3 col-sm-6">
-                    <div class="counters__card text-center">
-                        <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
-                            <i class="fa-solid fa-handshake"></i>
-                        </div>
-                        <div class="counter-num">
-                            <p class="fs-2 mb-1" data-target="50">0</p>
-                            <p class="mb-1">CLIENTS</p>
-                        </div>
+                    <div class="counter-num mt-auto mb-4">
+                        <p class="fs-2 mb-1" data-target="150">0</p> 
+                        <p class="text-uppercase mb-1">WORKING EMPLOYEES</p>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="counters__card text-center d-flex flex-column h-100">
+                    <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="counter-num mt-auto mb-4">
+                        <p class="fs-2 mb-1" data-target="15">0</p>
+                        <p class="text-uppercase mb-1">YEARS OF EXPERIENCE</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="counters__card text-center d-flex flex-column h-100">
+                    <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <div class="counter-num mt-auto mb-4">
+                        <p class="fs-2 mb-1" data-target="250000">0</p>
+                        <p class="mb-1">TONS OF EXPORTED FRESH PRODUCTS</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="counters__card text-center d-flex flex-column h-100">
+                    <div class="card__icon rounded-circle d-flex justify-content-center align-items-center mx-auto mt-4 mb-2">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div class="counter-num mt-auto mb-4">
+                        <p class="fs-2 mb-1" data-target="50">0</p>
+                        <p class="mb-1">CLIENTS</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>    
+    </div>
+</section>
+    
 <!-- ?======================= START Collections ====================== -->
 <section id="Collection" class="works section-padding mb-5">
     <div class="container">
@@ -307,7 +333,7 @@ Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
                         <img class="d-block w-100 " src="{% static 'images/medjol-product.jpg' %}" alt="Dates fruit">
                     </figure>
                     <div class="work__overlay d-flex justify-content-center align-items-center position-absolute">
-                        <a href="{% url 'products' %}#dates"><h6 class="mb-3 fw-bold">Madjool Dates</h6></a>
+                        <a href="{% url 'products' %}#dates"><h6 class="mb-3 fw-bold">Medjool Dates</h6></a>
                     </div>
                 </div>
             </div> 
@@ -464,13 +490,29 @@ Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <ul class="footer-links">
-                        <li><i class="fa-solid fa-phone me-2"></i> +201093395073</li>
-                        <li><i class="fa-solid fa-fax me-2"></i> +201093395073</li>
-                        <li><i class="fa-solid fa-envelope me-2"></i> Info@alhanaagri.com</li>
-                        <li><i class="fa-solid fa-location-dot me-2"></i> Egypt</li>
-                    </ul>
+<h4>Contact Info</h4>
+<ul class="footer-links">
+    <li><i class="fa-solid fa-phone me-2"></i> +201093395073</li>
+    <li>
+        <i class="fa-brands fa-whatsapp me-2"></i>
+        <a href="https://wa.me/201093395073" target="_blank" class="text-white text-decoration-none">
+            +201093395073
+        </a>
+    </li>
+    <li>
+        <i class="fa-solid fa-envelope me-2"></i>
+        <a href="mailto:Info@alhanaaagri.com" class="text-white text-decoration-none">
+            Info@alhanaaagri.com
+        </a>
+    </li>
+    <li>
+        <i class="fa-solid fa-location-dot me-2"></i>
+        <a href="https://maps.app.goo.gl/g2a63GK9aP1Vudve9?g_st=iw" target="_blank" class="text-white text-decoration-none">
+            Egypt
+        </a>
+    </li>
+</ul>
+
                 </div>
             </div>
             
@@ -484,6 +526,11 @@ Rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
     <a href="#home" id="btn-top" class="btn btn-primary rounded-circle p-0  btn__top ">
     <i class="fa-solid fa-arrow-up position-absolute top-50 left-50 translate-middle"></i>
     </a>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
     <!--^======= JS Files ======= -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
