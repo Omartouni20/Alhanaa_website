@@ -500,26 +500,38 @@ h5.product-title {
     height: 50px;
   }
 }
+@media (max-width: 767.98px) {
+  .product-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
 
-#preloader {
-  position: fixed;
-  inset: 0;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  h5.product-title {
+    font-size: 1.3rem;
+  }
+
+  .leaf-shape {
+    width: 130px;
+    height: 130px;
+    border-radius: 0% 59% 22% 63% / 26% 100% 0% 73%;
+    /*✅شكلالورقة*/overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
 }
 
-#logo-loader {
-  width: 180px;
-  height: auto;
-  mask-image: linear-gradient(to top, black 0%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
-  background: url('ALHANAA_Logo_Clean.png') no-repeat center/contain;
-  animation: fillLogo 2s ease-in-out forwards;
-  -webkit-animation: fillLogo 2s ease-in-out forwards;
+  .leaf-shape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ✅ تملأ الشكل تمامًا */
+    display: block;
+  }
 }
+
 
 /* تحريك التلوين من تحت لفوق */
 @keyframes fillLogo {
@@ -703,6 +715,22 @@ section.home {
   opacity: 0%;
   font-size: 28px;
 }
+@media (max-width: 767.98px) {
+  .comment {
+    overflow-x: auto; /* لو الكلام أكبر من الشاشة يسمح بالتمرير */
+  }
+
+  .comment h1 {
+    font-size: 42px;   /* ✅ مناسب للموبايل */
+    white-space: nowrap; /* ✅ يمنع النزول لسطر جديد */
+  }
+
+  .comment p {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}
+
 /* 
 .comment button
 {
@@ -813,12 +841,12 @@ section.home {
 /* ?========= HOME - COUNTERS SECTION ========= */
 .counters {
   background-image: url("../images/IMG_2953.JPG");
-  padding-block: 8rem;
+  /*padding-block: 4rem;*/
   color: var(--color-white);
 }
 
 /* ?========= HOME - COUNTERS SECTION ========= */
-.counters 
+. 
 /* ?========= HOME - COUNTERS SECTION ========= */
 .counters__card {
   color: var(--color-white);
@@ -872,13 +900,13 @@ section.home {
   -ms-transition: var(--transition-1);
   -o-transition: var(--transition-1);
 }
-.work .card:hover img {
+/*.work .card:hover img {
   transform: scale(1.3);
   -webkit-transform: scale(1.3);
   -moz-transform: scale(1.3);
   -ms-transform: scale(1.3);
   -o-transform: scale(1.3);
-}
+}*/
 .work .card .card__text {
   font-size: 0.8rem;
 }
@@ -929,9 +957,7 @@ color: var(--color-white);
 }
 .counters .counters__card { background-color: rgba(255, 255, 255, 0.9); padding: 2rem 1rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; color: var(--color-black); -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; -ms-transition: all 0.3s ease; -o-transition: all 0.3s ease;
 }
-.counters .counters__card:hover {
-transform: translateY(-10px);
-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.counters .counters__card:hover {  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); -webkit-transform: translateY(-10px); -moz-transform: translateY(-10px); -ms-transform: translateY(-10px); -o-transform: translateY(-10px);
 }
 .counters .card__icon {
 background-color: var(--color-green);
@@ -978,8 +1004,7 @@ cursor: pointer;
 -ms-transition: var(--transition-1);
 -o-transition: var(--transition-1);
 }
-.work .card:hover img {
-transform: scale(1.3);
+.work .card:hover img { transform: scale(1.3); -webkit-transform: scale(1.3); -moz-transform: scale(1.3); -ms-transform: scale(1.3); -o-transform: scale(1.3);
 }
 .work .card .card__text {
 font-size: 0.8rem;
@@ -1034,30 +1059,10 @@ font-size: 15px;
 }
 /* ?================== START  TESTMONIALS =============== */
 .testimonials {
-background-image: url("../images/rm309-adj-05.jpg");
-padding-block: 4rem;
+background-image: url("../images/fruit_pattern_clean.png");
+padding-block: 2rem;
 color: var(--color-white);
 position: relative;
-}
-.testimonials .slider__img {
-width: 8rem;
-height: 8rem;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-border: 5px solid white;
-}
-.carousel-indicators [data-bs-target] {
-width: 10px;
-height: 10px;
-border-radius: 50%;
-}
-.slider__text {
-font-size: 1.25rem;
-font-weight: 300;
-}
-@media screen and (min-width: 768px) {
-.slider__text {
-width: 85%;
-}
 }
 /* Modern Animation Classes */
 .fade-in {
@@ -1178,29 +1183,10 @@ transform: translateY(0);
 font-size: 1.25rem;
 font-weight: 300;
 }
-@media screen and (min-width: 768px) {
-.slider__text {
-width: 85%;
-}
-}
+
+
 /* ?================== START  Collections =============== */
-.work__overlay {
-background: rgba(39, 94, 51, 0.8);
-position: absolute;
-inset: 0px;
-opacity: 0;
-z-index: 3;
-transform: translateY(10px);
-transition: all 0.5s;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
--webkit-transform: translateY(10px);
--moz-transform: translateY(10px);
--ms-transform: translateY(10px);
--o-transform: translateY(10px);
-border-radius: 10px;
+.work__overlay { background: rgba(39, 94, 51, 0.8); position: absolute; inset: 0px; opacity: 0; z-index: 3; transform: translateY(10px); transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transform: translateY(10px); -moz-transform: translateY(10px); -ms-transform: translateY(10px); -o-transform: translateY(10px); border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px;
 }
 .works__box {
 border-radius: 10px;
@@ -1208,10 +1194,10 @@ overflow: hidden;
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 transition: all 0.3s ease;
 }
-.works__box:hover {
+/*.works__box:hover {
 transform: translateY(-10px);
 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
+}*/
 .works__box img {
 transition: all 0.5s ease-in-out;
 -webkit-transition: all 0.5s ease-in-out;
@@ -1219,13 +1205,13 @@ transition: all 0.5s ease-in-out;
 -ms-transition: all 0.5s ease-in-out;
 -o-transition: all 0.5s ease-in-out;
 }
-.works__box:hover img {
+/*.works__box:hover img {
 transform: scale(1.3);
 -webkit-transform: scale(1.3);
 -moz-transform: scale(1.3);
 -ms-transform: scale(1.3);
 -o-transform: scale(1.3);
-}
+}*/
 /* تغيير لون الرابط عند التمرير فوق الصورة */
 .works__box:hover .work__overlay a h6 {
 color: #f7af29; /* تغيير اللون إلى برتقالي */
@@ -1343,17 +1329,41 @@ color: #ffffff;
 font-size: 60px;
 font-weight: bolder;
 }
-.bgOfPage h2::after {
-font-family: "FontAwesome";
-content: "\f06c";
-font-size: 36px;
-line-height: 36px;
-color: #fff;
-margin-left: 15px;
+.bgOfPage {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pages bg.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
 }
-.afterElment img {
-width: 100px;
+
+.bgOfPage h2 {
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: bolder;
 }
+
+/* ✅ ميديا كويري للموبايلات */
+@media (max-width: 768px) {
+  .bgOfPage {
+    background-attachment: scroll; /* على الموبايل fixed ساعات بتبوظ */
+    background-position: center top;
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .bgOfPage h2 {
+    font-size: 32px;
+  }
+}
+
 .products h1 {
 color: #333333;
 position: relative;
@@ -1583,6 +1593,7 @@ bottom: 0;
 width: 50px;
 height: 2px;
 background-color: var(--color-tometo);
+color: var(--color-tometo);
 }
 .footer-links {
 list-style: none;
@@ -1592,15 +1603,9 @@ margin: 0;
 .footer-links li {
 margin-bottom: 0.8rem;
 }
-.footer-links a {
-color: rgba(255, 255, 255, 0.8);
-text-decoration: none;
-transition: all 0.3s ease;
-display: inline-block;
+.footer-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s ease; display: inline-block; -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; -ms-transition: all 0.3s ease; -o-transition: all 0.3s ease;
 }
-.footer-links a:hover {
-color: var(--color-tometo);
-transform: translateX(5px);
+.footer-links a:hover { color: var(--color-tometo); transform: translateX(5px); -webkit-transform: translateX(5px); -moz-transform: translateX(5px); -ms-transform: translateX(5px); -o-transform: translateX(5px);
 }
 .social-icons {
 display: flex;
@@ -1622,6 +1627,9 @@ transition: all 0.3s ease;
 background-color: var(--color-tometo);
 transform: translateY(-3px);
 }
+.conact_info a:hover {
+  color: var(--color-tometo);
+}
 .copyright__box {
 border-top: 1px solid rgba(255, 255, 255, 0.1);
 padding-top: 1.5rem;
@@ -1639,6 +1647,20 @@ flex-direction: column;
 margin-bottom: 2rem;
 }
 }
+.footer-links a:hover {
+  color: #ffc107;
+  transform: translateX(5px);
+}
+
+.social-icons a:hover {
+  background-color: #ffc107;
+  transform: translateY(-3px);
+}
+
+.conact_info a:hover {
+  color: #ffc107;
+}
+
 /* !================== START  PORTFOLIO DETAILS PAGE ================= */
 /* ?================== START  HERO SECTION =============== */
 .hero {
@@ -1651,7 +1673,7 @@ font-weight: 600;
 }
 @media screen and (min-width: 768px) {
 .hero .hero__title {
-font-size: 4rem;
+font-size: 2rem;
 }
 }
 .hero .breadcrumb-item + .breadcrumb-item::before {
@@ -2206,14 +2228,15 @@ background-color: #0056b3;
   display: block;
 }
 
-body {
-  overflow-x: hidden;
-}
 .animated-text {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeSlideIn 1s ease-out forwards;
-  -webkit-animation: fadeSlideIn 1s ease-out forwards;
+  -webkit-animation:;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
 }
 
 #hero-title {
@@ -2229,14 +2252,22 @@ body {
   transform: translateY(30px);
   animation: fadeSlideIn 1s ease-out forwards;
   animation-delay: 1.2s;
-  -webkit-animation: fadeSlideIn 1s ease-out forwards;
+  -webkit-animation:;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
 }
 
 @keyframes fadeSlideIn {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
 }
 .carousel-caption .comment {
   position: absolute;
@@ -2246,10 +2277,10 @@ body {
   z-index: 10;
   color: white;
   text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  -webkit-transform:;
+  -moz-transform:;
+  -ms-transform:;
+  -o-transform:;
 }
 .alhanaa-certificates-wrapper {
   background: #fff;
