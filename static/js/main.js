@@ -198,3 +198,85 @@ document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-sca
 animationObserver.observe(el);
 });
 });
+   const logo = document.getElementById("main-logo");
+
+  // المسارات كـ نص مباشر
+  const originalLogo = "/static/images/ALHANAA_Logo_Clean.png";
+  const whiteLogo = "/static/images/ALHANAA_Logo_White.png";
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      logo.src = whiteLogo;
+    } else {
+      logo.src = originalLogo;
+    }
+  });
+
+  const slider = document.getElementById('slider');
+  const track = document.getElementById('track');
+
+  let scrollSpeed = 0.5; // السرعة
+  let isPaused = false;
+
+  // تكرار المحتوى مرتين عشان نقدر نلفه بلا نهاية
+  track.innerHTML += track.innerHTML;
+
+  function autoScroll() {
+    if (!isPaused) {
+      slider.scrollLeft += scrollSpeed;
+
+      // لو وصل لنص المحتوى، يرجع للبداية فورًا (عشان التكرار اليدوي اللي فوق)
+      if (slider.scrollLeft >= track.scrollWidth / 2) {
+        slider.scrollLeft = 0;
+      }
+    }
+    requestAnimationFrame(autoScroll);
+  }
+
+  // Start auto scrolling
+  requestAnimationFrame(autoScroll);
+
+  // Pause on hover
+  slider.addEventListener('mouseenter', () => {
+    isPaused = true;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isPaused = false;
+  });
+  
+   window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    setTimeout(() => preloader.style.display = "none", 1000);
+  });
+  
+   AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      document.querySelectorAll('.timeline-item:not(.show-now)').forEach(item => {
+        observer.observe(item);
+      });
+    });
+
+      window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent-navbar");
+    } else {
+      navbar.classList.add("transparent-navbar");
+    }
+  });

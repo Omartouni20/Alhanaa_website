@@ -7,6 +7,11 @@ from .models import ContactMessage
 def index_view(request):
     return render(request, 'index.html')
 
+
+def certificates_view(request):
+    return render(request, 'certificates.html')
+
+
 def about_view(request):
     return render(request, 'about.html')
 

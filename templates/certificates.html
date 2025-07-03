@@ -1,0 +1,288 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certificates - ALHANAA</title>
+
+  <link href="{% static 'images/Logo.jpg.png' %}" rel="icon" />
+  <link href="{% static 'imgs/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    .timeline-section { padding: 70px 0; background-color: #f5f5f5; }
+    .timeline-section h2 { font-size: 2.5rem; font-weight: 700; color: black; }
+    .timeline { position: relative; }
+    .timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 4px; background-color: #3A986C; z-index: 1; }
+    .timeline-item { position: relative; margin: 100px 0; z-index: 2; opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .timeline-item.active { opacity: 1; transform: translateY(0); }
+    .timeline-item.show-now { opacity: 1 !important; transform: none !important; }
+    .timeline-item::after { content: ''; position: absolute; width: 24px; height: 24px; background-color: white; border: 5px solid #ccc; top: 30px; left: 50%; transform: translateX(-50%); border-radius: 50%; z-index: 3; transition: border-color 0.5s ease; }
+    .timeline-item.active::after, .timeline-item.show-now::after { border-color: #3A986C; }
+    .timeline-content { background: #e8f8f1; padding: 35px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08); max-width: 90%; }
+    .timeline-content img { max-width: 130px; margin-bottom: 20px; }
+    .timeline-content h4 { font-size: 1.7rem; font-weight: bold; margin-bottom: 10px; }
+    .timeline-content p { font-size: 1.15rem; line-height: 1.8; color: #333; }
+    @media (max-width: 768px) { .timeline::before { left: 8px; } .timeline-item::after { left: 8px; transform: none; } .timeline-content { max-width: 100%; } }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
+    <nav id="navbar" class="navbar navbar-expand-lg  navbar-dark fixed-top">
+
+        <div class="container ">
+<a class="navbar-brand logo" href="#">
+  <img id="main-logo"
+       src="{% static 'images/ALHANAA_Logo_Clean.png' %}"
+       alt="AL HANAA Logo"
+       style="max-height: 70px;" />
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars nav-icon btn__menu__open"></i>
+                <i class="fa-solid fa-xmark nav-icon btn__menu__close"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
+                    <li class="nav-item ">
+    <a class="nav-link p-0" href="{% url 'index' %}" target="_self">Home</a>
+                    </li>
+                    <li class="nav-item">
+    <a class="nav-link p-0" href="{% url 'products' %}" target="_self">Products</a>
+</li>
+
+                    <li class="nav-item">
+    <a class="nav-link p-0" aria-current="page"  href="{% url 'about' %}">About Us</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link p-0 active" href="{% url 'certificates' %}" target="_self">certificates</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link p-0" href="{% url 'contact' %}" target="_self">Contact Us</a>
+</li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent-navbar");
+    } else {
+      navbar.classList.add("transparent-navbar");
+    }
+  });
+</script>
+
+    <div class="bgOfPage  d-flex align-items-center justify-content-center">
+      <h2>Certificates</h2>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Certifications Timeline</h2>
+      <div class="timeline">
+        <!-- شهادة 1 -->
+        <div class="timeline-item left show-now active">
+          <div class="row gx-0">
+            <div class="col-md-6 d-flex justify-content-end">
+              <div class="timeline-content text-end">
+                <img src="{% static 'images/2.png' %}" alt="Global GAP">
+                <h4>Global GAP</h4>
+                <p>Ensures compliance with international agricultural standards.</p>
+              </div>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+
+        <!-- شهادة 2 -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="row gx-0">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 d-flex justify-content-start">
+              <div class="timeline-content text-start">
+                <img src="{% static 'images/3.png' %}" alt="SEDEX">
+                <h4>SEDEX Membership</h4>
+                <p>Affirms our ethical business practices and supply chain transparency.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- شهادة 3 -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="row gx-0">
+            <div class="col-md-6 d-flex justify-content-end">
+              <div class="timeline-content text-end">
+                <img src="{% static 'images/4.png' %}" alt="ISO 22000">
+                <h4>ISO 22000</h4>
+                <p>Certified food safety management system ensuring safe supply chains.</p>
+              </div>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+
+        <!-- شهادة 4 -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="row gx-0">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 d-flex justify-content-start">
+              <div class="timeline-content text-start">
+                <img src="{% static 'images/5.png' %}" alt="Fair Trade">
+                <h4>Fair Trade</h4>
+                <p>Supports fair prices, decent working conditions, and sustainability.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- شهادة 5 -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="row gx-0">
+            <div class="col-md-6 d-flex justify-content-end">
+              <div class="timeline-content text-end">
+                <img src="{% static 'images/6.png' %}" alt="Organic Certification">
+                <h4>Organic Certified</h4>
+                <p>Confirms our compliance with organic farming and chemical-free production.</p>
+              </div>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+
+        <!-- شهادة 6 -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="row gx-0">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 d-flex justify-content-start">
+              <div class="timeline-content text-start">
+                <img src="{% static 'images/2.png' %}" alt="HACCP">
+                <h4>HACCP</h4>
+                <p>Hazard Analysis and Critical Control Points for global food safety standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="footer">
+  <div class="container-fluid px-5">
+    <div class="footer-content row gy-2">
+
+      <!-- About -->
+      <div class="footer-section col-md-5 text-center">
+        <img src="{% static 'images/ALHANAA_Logo_White.png' %}" 
+             alt="ALHANAA Logo" 
+             class="img-fluid mb-3" 
+             style="max-width: 200px; height: auto;">
+        <p class="mx-auto" style="font-weight: normal; max-width: 400px;">
+          Al Hanaa is a trusted grower and exporter of premium fruits, producing with sustainability and traceability at the core, delivering with integrity and precision.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section col-md-2">
+        <h4>Quick Links</h4>
+        <ul class="footer-links list-unstyled">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="#Collection">Collection</a></li>
+          <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section col-md-2">
+        <h4>Contact Info</h4>
+        <ul class="footer-links list-unstyled">
+          <li>
+            <a href="tel:+201093395073" class="text-white text-decoration-none d-flex align-items-center">
+              <i class="fa-solid fa-phone me-2"></i> +201093395073
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/201093395073" target="_blank" class="text-white text-decoration-none d-flex align-items-center">
+              <i class="fa-brands fa-whatsapp me-2"></i> +201093395073
+            </a>
+          </li>
+          <li>
+            <a href="mailto:Info@alhanaaagri.com" class="text-white text-decoration-none d-flex align-items-center">
+              <i class="fa-solid fa-envelope me-2"></i> Info@alhanaaagri.com
+            </a>
+          </li>
+          <li>
+            <a href="https://maps.app.goo.gl/g2a63GK9aP1Vudve9?g_st=iw" target="_blank" class="text-white text-decoration-none d-flex align-items-center">
+              <i class="fa-solid fa-location-dot me-2"></i> Minya, Egypt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-section col-md-2">
+        <h4>Social Media</h4>
+        <div class="d-flex gap-4 mt-3 social-icons">
+          <a href="https://www.facebook.com/profile.php?id=100064835928360" target="_blank" class="text-white text-decoration-none social-icon">
+            <i class="fa-brands fa-facebook fa-2x"></i>
+          </a>
+          <a href="#" class="text-white text-decoration-none social-icon">
+            <i class="fa-brands fa-twitter fa-2x"></i>
+          </a>
+          <a href="#" class="text-white text-decoration-none social-icon">
+            <i class="fa-brands fa-instagram fa-2x"></i>
+          </a>
+          <a href="#" class="text-white text-decoration-none social-icon">
+            <i class="fa-brands fa-linkedin fa-2x"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="copyright__box mt-4">
+      <p class="copyright">
+        © Copyright-2025 <span class="fw-bold">ALHANAA</span>. All Rights Reserved
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.timeline-item:not(.show-now)').forEach(item => {
+    observer.observe(item);
+  });
+});
+
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
