@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
   <style>
     .timeline-section { padding: 70px 0; background-color: #f5f5f5; }
@@ -55,13 +57,14 @@
                     <li class="nav-item ">
     <a class="nav-link p-0" href="{% url 'index' %}" target="_self">Home</a>
                     </li>
+                                        <li class="nav-item">
+    <a class="nav-link p-0" aria-current="page"  href="{% url 'about' %}">About Us</a>
+</li>
                     <li class="nav-item">
     <a class="nav-link p-0" href="{% url 'products' %}" target="_self">Products</a>
 </li>
 
-                    <li class="nav-item">
-    <a class="nav-link p-0" aria-current="page"  href="{% url 'about' %}">About Us</a>
-</li>
+
 <li class="nav-item">
     <a class="nav-link p-0 active" href="{% url 'certificates' %}" target="_self">certificates</a>
 </li>
@@ -92,7 +95,7 @@
 
   <section class="timeline-section">
     <div class="container">
-      <h2 class="text-center mb-5">Our Certifications Timeline</h2>
+      <h2 class="text-center mb-5">Our Certifications</h2>
       <div class="timeline">
         <!-- شهادة 1 -->
         <div class="timeline-item left show-now active">
@@ -100,8 +103,8 @@
             <div class="col-md-6 d-flex justify-content-end">
               <div class="timeline-content text-end">
                 <img src="{% static 'images/2.png' %}" alt="Global GAP">
-                <h4>Global GAP</h4>
-                <p>Ensures compliance with international agricultural standards.</p>
+                <!--<h4>Global G.A.P</h4>-->
+                <p>GLOBALG.A.P. is an internationally recognized standard that promotes safe and sustainable agricultural production. It sets clear requirements for how food is grown, handled, and harvested, focusing on key areas such as food safety, environmental care, and the health and safety of workers. This certification helps producers meet the expectations of international markets and assures supply chains that products are grown under responsible farming practices.</p>
               </div>
             </div>
             <div class="col-md-6"></div>
@@ -115,8 +118,8 @@
             <div class="col-md-6 d-flex justify-content-start">
               <div class="timeline-content text-start">
                 <img src="{% static 'images/3.png' %}" alt="SEDEX">
-                <h4>SEDEX Membership</h4>
-                <p>Affirms our ethical business practices and supply chain transparency.</p>
+                <!--<h4>ISO 45001</h4>-->
+                <p>ISO 45001 is a global standard focused on workplace health and safety. It outlines a framework that organizations can use to identify hazards, reduce risks, and create safer, healthier working conditions. Its purpose is to help prevent work-related injuries and illnesses while promoting employee well-being and compliance with safety regulations.</p>
               </div>
             </div>
           </div>
@@ -128,8 +131,8 @@
             <div class="col-md-6 d-flex justify-content-end">
               <div class="timeline-content text-end">
                 <img src="{% static 'images/4.png' %}" alt="ISO 22000">
-                <h4>ISO 22000</h4>
-                <p>Certified food safety management system ensuring safe supply chains.</p>
+                <!--<h4>ISO 50001</h4>-->
+                <p>ISO 50001 is the international standard for managing energy efficiently. It helps organizations develop systems and processes to improve energy performance reducing energy consumption, cutting costs, and minimizing environmental impact. The goal of ISO 50001 is to support continuous improvement in energy use through smarter operations and responsible energy planning.</p>
               </div>
             </div>
             <div class="col-md-6"></div>
@@ -143,8 +146,8 @@
             <div class="col-md-6 d-flex justify-content-start">
               <div class="timeline-content text-start">
                 <img src="{% static 'images/5.png' %}" alt="Fair Trade">
-                <h4>Fair Trade</h4>
-                <p>Supports fair prices, decent working conditions, and sustainability.</p>
+                <!--<h4>ISO 9001</h4>-->
+                <p>ISO 9001 is the world’s most widely recognized standard for quality management. It provides a structured approach to improving efficiency, maintaining consistent product and service quality, and enhancing customer satisfaction. The standard helps organizations align their operations with global best practices and meet both customer and regulatory expectations.</p>
               </div>
             </div>
           </div>
@@ -156,8 +159,8 @@
             <div class="col-md-6 d-flex justify-content-end">
               <div class="timeline-content text-end">
                 <img src="{% static 'images/6.png' %}" alt="Organic Certification">
-                <h4>Organic Certified</h4>
-                <p>Confirms our compliance with organic farming and chemical-free production.</p>
+                <!--<h4>ISO 14001</h4>-->
+                <p>ISO 14001 is an international standard that focuses on effective environmental management. It provides organizations with a framework to identify, control, and reduce their environmental impact. The purpose of this standard is to promote sustainability by encouraging responsible resource use, waste reduction, and compliance with environmental regulations—helping businesses operate more efficiently while protecting the environment.</p>
               </div>
             </div>
             <div class="col-md-6"></div>
@@ -170,9 +173,9 @@
             <div class="col-md-6"></div>
             <div class="col-md-6 d-flex justify-content-start">
               <div class="timeline-content text-start">
-                <img src="{% static 'images/2.png' %}" alt="HACCP">
-                <h4>HACCP</h4>
-                <p>Hazard Analysis and Critical Control Points for global food safety standards.</p>
+                <img src="{% static 'images/7.png' %}" alt="HACCP">
+                <!--<h4>BRCGS</h4>-->
+                <p>BRCGS stands for Brand Reputation Compliance Global Standards. It is a leading global certification program developed to ensure that food products are produced, packaged, and handled to the highest safety and quality standards. The certification is built around strict requirements covering areas such as hygiene, hazard control, traceability, and quality assurance.</p>
               </div>
             </div>
           </div>

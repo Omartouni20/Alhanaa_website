@@ -2456,7 +2456,7 @@ background-color: #0056b3;
    color: #FFD700; /* اللون الأصفر عند الهوفر */
   transform: scale(1.05); 
 }
-   .timeline-section {
+   /*.timeline-section {
       padding: 70px 0;
     }
 
@@ -2559,4 +2559,139 @@ background-color: #0056b3;
         max-width: 100%;
       }
     }
-    
+    */
+    .timeline-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background: #3A986C;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timeline-item .timeline-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 460px;
+  transition: transform 0.4s ease;
+}
+
+.timeline-item.left .timeline-content {
+  margin-right: auto;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: auto;
+}
+
+.timeline-content img {
+  max-width: 80px;
+  margin-bottom: 15px;
+}
+
+.timeline-content h4 {
+  font-size: 20px;
+  color: #3A986C;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+/* دائرة صغيرة في المنتصف */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #3A986C;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline::before {
+    display: none; /* ✅ إخفاء الخط */
+  }
+
+  .timeline-item::before {
+    display: none; /* ✅ إخفاء الدائرة */
+  }
+
+  .timeline-item .timeline-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item::before {
+    content: none !important;  /* ✅ يمنع إنشاء الدائرة */
+    display: none !important;  /* أو تأكيد الإخفاء */
+  }
+}
+@media (max-width: 767.98px) {
+  .vertical-line {
+    display: none !important;
+  }
+}
+
+/* هوفر مشترك للأيقونة والنص */
+.subabout-item a,
+.subabout-item i {
+  transition: all 0.3s ease;
+}
+
+.subabout-item div:hover a {
+  color: var(--color-tometo) !important;
+  transform: translateX(5px);
+  -webkit-transform: translateX(5px);
+  -moz-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  -o-transform: translateX(5px);
+}
+
+.subabout-item div:hover i {
+  color: var(--color-tometo) !important;
+  transform: scale(1.2);
+}
+
+.subabout-item i.fa-phone {
+  color: white !important;
+}
