@@ -132,7 +132,7 @@ html {
 .section__title h3::after {
   position: absolute;
   content: "";
-  background-image: url("../images/dots.png");
+  /*background-image: url("../images/dots.png");*/
   width: 100%;
   height: 30px;
   background-repeat: repeat;
@@ -1030,7 +1030,7 @@ width: 90%; /* تأكد من أن النص داخل حدود الشاشة */
 }
 }
 .testimonials {
-background-image: url("../images/rm309-adj-05.jpg");
+/*background-image: url("../images/rm309-adj-05.jpg");*/
 background-size: cover; /* اجعل الصورة تغطي الخلفية بشكل جيد */
 background-position: center;
 padding-block: 4rem;
@@ -1917,7 +1917,7 @@ color: #275e33;
 font-size: 50px;
 }
 .cer-bg {
-background-image: url(../images/rm309-adj-05.jpg);
+/*background-image: url(../images/rm309-adj-05.jpg);*/
 background-attachment: fixed;
 background-size: 100% 100%;
 }
@@ -2306,7 +2306,7 @@ background-color: #0056b3;
 .alhanaa-certificate img {
   width: 100%;
   height: 130px;
-  object-fit: contain;
+  object-fit: fill;
   transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   -moz-transition: transform 0.3s ease;
@@ -2396,7 +2396,13 @@ background-color: #0056b3;
   box-shadow: none !important;
   border: none !important;
   background: transparent !important;
+  object-fit: fill;
 }
+.certificates-grid .certificate {
+  max-height: none;
+  overflow: visible;
+}
+
 
 .product-slider {
   overflow-x: hidden; /* نخفي السكروول تمامًا */
