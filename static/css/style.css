@@ -2740,3 +2740,26 @@ background-color: #0056b3;
 .fruit-slider-section {
   background-color: #fff !important;
 }
+.table-responsive-mobile {
+  overflow-x: auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .table-responsive-mobile table {
+    font-size: 12px;
+  }
+
+  .table-responsive-mobile table td img,
+  .table-responsive-mobile table th img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .table-responsive-mobile table th,
+  .table-responsive-mobile table td {
+    padding: 4px;
+    white-space: nowrap;
+  }
+}

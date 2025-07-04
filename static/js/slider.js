@@ -1,21 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("slider");
+  const scrollStep = window.innerWidth < 768 ? 200 : 250;
+  const slideInterval = 2000;
 
-  const scrollStep = 270;
-  const slideInterval = 2000; // أسرع من 3000
+  // === انسخ كل العناصر مرة تانية لعمل وهم التكرار ===
+  const slides = Array.from(slider.children);
+  slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    slider.appendChild(clone);
+  });
 
   function autoScrollSlider() {
-    // لو وصل للآخر، يرجع للبداية بسلاسة
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
-      slider.scrollTo({ left: 0, behavior: "auto" });
-    } else {
-      slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+    slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+
+    // لما نوصل للآخر جداً، نرجّع position بدون ما المستخدم يحس
+    if (slider.scrollLeft >= slider.scrollWidth / 2) {
+      slider.scrollLeft = 0;
     }
   }
 
   let interval = setInterval(autoScrollSlider, slideInterval);
 
-  // لما المستخدم يتفاعل (يسحب)، نوقف التمرير التلقائي مؤقتًا
   function pauseAutoScroll() {
     clearInterval(interval);
   }
@@ -30,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   slider.addEventListener("touchend", resumeAutoScroll);
   slider.addEventListener("mouseleave", resumeAutoScroll);
 
-  // دعم السحب بالماوس والموبايل
   let isDown = false;
   let startX;
   let scrollLeft;

@@ -85,202 +85,105 @@
     <div class="my-accordin mt-5 mb-5">
       <!--<h2>Our Products</h2>-->
  
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button product-accbtn" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Availability Chart
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
 
-   <div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button class="accordion-button product-accbtn " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-          Availability Chart
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse  " aria-labelledby="panelsStayOpen-headingOne">
-        <div class="accordion-body">
-          <!--<strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.-->
+        <div class="table-responsive-mobile mt-3">
+          <table class="table table-light table-striped table-bordered align-middle text-center">
+            <thead class="table-success">
+              <tr>
+                <th>Product</th>
+                <th>Jan</th>
+                <th>Feb</th>
+                <th>Mar</th>
+                <th>Apr</th>
+                <th>May</th>
+                <th>Jun</th>
+                <th>Jul</th>
+                <th>Aug</th>
+                <th>Sep</th>
+                <th>Oct</th>
+                <th>Nov</th>
+                <th>Dec</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pineapple</td>
+                <td><img src="{% static 'images/orange_11974688.png' %}" alt=""></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td><img src="{% static 'images/orange_11974688.png' %}" alt=""></td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <td>Fremont</td>
+                <td><img src="{% static 'images/mandarin_1704398.png' %}" alt=""></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td><img src="{% static 'images/mandarin_1704398.png' %}" alt=""></td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <td>Grapefruit</td>
+                <td><img src="{% static 'images/grapefruit_3523482.png' %}" alt=""></td>
+                <td><img src="{% static 'images/grapefruit_3523482.png' %}" alt=""></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <td>Early Sweet Grapes</td>
+                <td></td><td></td><td></td><td></td>
+                <td><img src="{% static 'images/grapes_image_1-removebg-preview.png' %}" alt=""></td>
+                <td><img src="{% static 'images/grapes_image_1-removebg-preview.png' %}" alt=""></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <td>Flame Grapes</td>
+                <td></td><td></td><td></td><td></td>
+                <td><img src="{% static 'images/grapes_image_2-removebg-preview.png' %}" alt=""></td>
+                <td><img src="{% static 'images/grapes_image_2-removebg-preview.png' %}" alt=""></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <td>Thompson Grapes</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td><img src="{% static 'images/grapes_image_3-removebg-preview.png' %}" alt=""></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <td>Barhi Dates</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td><img src="{% static 'images/golden-date-fruit-icon-isometric-food-palm-vector-removebg-preview.png' %}" alt=""></td>
+                <td></td><td></td><td></td><td></td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <td>Medjool Dates</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td>
+                <td><img src="{% static 'images/datess.png' %}" alt=""></td>
+                <td></td><td></td><td></td>
+                <td>Available</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="row">
-        <div class="">
-          <table class="table table-light table-striped table table-bordered">
-            <tr class="table-success ">
-                <td class="text-center">Product</td>
-                <td class="text-center">Jan</td>
-                <td class="text-center">Feb</td>
-                <td class="text-center">Mar</td>
-                <td class="text-center">Apr</td>
-                <td class="text-center">May</td>
-                <td class="text-center">Jun</td>
-                <td class="text-center">Jul</td>
-                <td class="text-center">Aug</td>
-                <td class="text-center">Sep</td>
-                <td class="text-center">Oct</td>
-                <td class="text-center">Nov</td>
-                <td class="text-center">Dec</td>
-                <td class="text-center">Status</td>
-            </tr>
-            <tr>
-              <td class="text-center">Pinapple</td>
-              <td class="text-center"><img src="{% static 'images/orange_11974688.png' %}" alt=""></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"><img src="{% static 'images/orange_11974688.png' %}" alt=""></td>
-                <td class="text-center">Available</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Fremont</td>
-                  <td class="text-center"><img src="{% static 'images/mandarin_1704398.png' %}" alt=""></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"><img src="{% static 'images/mandarin_1704398.png' %}" alt=""></td>
-                    <td class="text-center">Available</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">Grapefruit</td>
-                      <td class="text-center"><img src="{% static 'images/grapefruit_3523482.png' %}" alt=""></td>
-                      <td class="text-center"><img src="{% static 'images/grapefruit_3523482.png' %}" alt=""></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center">Available</td>
-                        </tr>
-                        <td class="text-center">Early Sweat Grapes</td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"><img src="{% static 'images/grapes_image_1-removebg-preview.png' %}" alt=""></td>
-                        <td class="text-center"><img src="{% static 'images/grapes_image_1-removebg-preview.png' %}" alt=""></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center">Available</td>
-                          </tr>
-                        </tr>
-                        <td class="text-center">Flame Grapes</td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"><img src="{% static 'images/grapes_image_2-removebg-preview.png' %}" alt=""></td>
-                        <td class="text-center"><img src="{% static 'images/grapes_image_2-removebg-preview.png' %}" alt=""></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center">Available</td>
-                          </tr>
-                        </tr>
-                        <td class="text-center">Thompson Grapes</td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"><img src="{% static 'images/grapes_image_3-removebg-preview.png' %}" alt=""></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center">Available</td>
-                          </tr>
 
-                        </tr>
-                        <td class="text-center">Barhi Dates</td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"><img src="{% static 'images/golden-date-fruit-icon-isometric-food-palm-vector-removebg-preview.png' %}" alt=""></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center">Available</td>
-                        </tr>
-                      </tr>
-                      <td class="text-center">Medjool Dates</td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"><img src="{% static 'images/datess.png' %}" alt=""></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center"></td>
-                      <td class="text-center">Available</td>
-                      </tr>
-                    <!--</tr>
-                    <td class="text-center">Mango</td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"><img src="{% static 'images/mango_680967.png' %}" alt=""></td>
-                    <td class="text-center"><img src="{% static 'images/mango_680967.png' %}" alt=""></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                   <td class="text-center">Available</td>-->
-                  <!--</tr>
-                </tr>
-                <td class="text-center">Olive</td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"><img src="{% static 'images/olive_11159096.png' %}" alt=""></td>
-                <td class="text-center"><img src="{% static 'images/olive_11159096.png' %}" alt=""></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center">Available</td>
-                </tr>-->
-      </table>
-        </div>
-      </div>
       </div>
     </div>
+  </div>
+</div>
+
     <!--<div class="Ornage " id="orang">
     <div class="my-accordin mt-5 mb-5">
       <h1>Orange</h1>
