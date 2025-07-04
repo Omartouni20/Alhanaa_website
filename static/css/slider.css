@@ -73,3 +73,47 @@ body {
 .fruit-slider-section {
   overflow-x: hidden;
 }
+
+@media (max-width: 768px) {
+  .fruit-slider-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .static-side {
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .product-slide {
+    min-width: 180px;
+  }
+
+  .product-slide img {
+    height: 150px;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .static-side {
+    animation: fadeInDown 0.6s ease-in-out;
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
