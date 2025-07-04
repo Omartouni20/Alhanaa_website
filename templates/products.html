@@ -169,8 +169,8 @@
                         <td class="text-center"></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
-                        <td class="text-center"><img src="{% static 'images/fruit_15613022.png' %}" alt=""></td>
-                        <td class="text-center"><img src="{% static 'images/fruit_15613022.png' %}" alt=""></td>
+                        <td class="text-center"><img src="{% static 'images/grapes_image_1-removebg-preview.png' %}" alt=""></td>
+                        <td class="text-center"><img src="{% static 'images/grapes_image_1-removebg-preview.png' %}" alt=""></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
@@ -185,8 +185,8 @@
                         <td class="text-center"></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
-                        <td class="text-center"><img src="{% static 'images/fruit_15613022.png' %}" alt=""></td>
-                        <td class="text-center"><img src="{% static 'images/fruit_15613022.png' %}" alt=""></td>
+                        <td class="text-center"><img src="{% static 'images/grapes_image_2-removebg-preview.png' %}" alt=""></td>
+                        <td class="text-center"><img src="{% static 'images/grapes_image_2-removebg-preview.png' %}" alt=""></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
@@ -203,7 +203,7 @@
                         <td class="text-center"></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
-                        <td class="text-center"><img src="{% static 'images/fruit_15613022.png' %}" alt=""></td>
+                        <td class="text-center"><img src="{% static 'images/grapes_image_3-removebg-preview.png' %}" alt=""></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
@@ -412,18 +412,33 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   <div class="container">
     <div class="row">
 <div class="row" id="productList">
+<!-- Filter Tabs -->
+<ul class="nav nav-pills justify-content-center mb-4" id="productFilter">
+  <li class="nav-item">
+    <button class="nav-link active" data-filter="all">All</button>
+  </li>
+  <li class="nav-item">
+    <button class="nav-link" data-filter="citrus">Citrus</button>
+  </li>
+  <li class="nav-item">
+    <button class="nav-link" data-filter="grapes">Grapes</button>
+  </li>
+  <li class="nav-item">
+    <button class="nav-link" data-filter="dates">Dates</button>
+  </li>
+</ul>
 
   <!-- Pineapple Orange -->
   
    
-  <div class="col-md-6 col-12 product-card citrus">
+  <div class="col-md-6 col-12 product-card citrus" id="pineapple">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Pineapple Orange</h5>
         <div class="leaf-shape"><img src="/static/images/Orange icon.jpg" alt=""></div>
       </div>
       <p class="product-desc">
-        is a premium citrus variety distinguished by its vibrant color, naturally sweet flavor, and high juice content. Known for its subtle tropical aroma, it is easy to peel and ideal for both fresh consumption and juice production. Typically harvested in the mid to late citrus season, Pineapple Orange is widely appreciated for its quality and flavor.
+       Pineapple Orange is a premium citrus variety distinguished by its vibrant color, naturally sweet flavor, and high juice content. Known for its subtle tropical aroma, it is easy to peel and ideal for both fresh consumption and juice production. Typically harvested in the mid to late citrus season, Pineapple Orange is widely appreciated for its quality and flavor.
       </p>
       <div class="product-timeline mb-3">
         <div class="d-flex align-items-center mb-2">
@@ -449,7 +464,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   </div>
 
   <!-- Grapefruit -->
-  <div class="col-md-6 col-12 product-card citrus">
+  <div class="col-md-6 col-12 product-card citrus" id="grapefruit">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Grapefruit</h5>
@@ -482,14 +497,14 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   </div>
 
   <!-- Fremont Mandarin -->
-  <div class="col-md-6 col-12 product-card citrus">
+  <div class="col-md-6 col-12 product-card citrus" id="fremont">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Fremont Mandarin</h5>
         <div class="leaf-shape"><img src="/static/images/Fermont icon.jpg" alt=""></div>
       </div>
       <p class="product-desc">
-        is a seedless or low-seeded variety known for its vibrant flavor and visual appeal. It offers a balanced sweetness with mild acidity, making it especially enjoyable for fresh consumption. Harvested early in the citrus season, Fremont stands out for its excellent shelf life and consistent consumer demand.
+       Fremont Mandarin is a seedless or low-seeded variety known for its vibrant flavor and visual appeal. It offers a balanced sweetness with mild acidity, making it especially enjoyable for fresh consumption. Harvested early in the citrus season, Fremont stands out for its excellent shelf life and consistent consumer demand.
       </p>
       <div class="product-timeline mb-3">
         <div class="d-flex align-items-center mb-2">
@@ -515,7 +530,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   </div>
 
   <!-- Early Sweet Grapes -->
-  <div class="col-md-6 col-12 product-card grapes">
+  <div class="col-md-6 col-12 product-card grapes" id="earlysweat">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Early Sweat Grapes</h5>
@@ -548,7 +563,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   </div>
 
   <!-- Thompson Grapes -->
-  <div class="col-md-6 col-12 product-card grapes">
+  <div class="col-md-6 col-12 product-card grapes" id="thomson">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Thompson Grapes</h5>
@@ -581,7 +596,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   </div>
 
   <!-- Red Flame Grapes -->
-  <div class="col-md-6 col-12 product-card grapes">
+  <div class="col-md-6 col-12 product-card grapes" id="flame">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Red Flame Grapes</h5>
@@ -614,7 +629,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   </div>
 
   <!-- Barhi Dates -->
-  <div class="col-md-6 col-12 product-card dates">
+  <div class="col-md-6 col-12 product-card dates" id="barhi">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Barhi Dates</h5>
@@ -647,7 +662,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   </div>
 
   <!-- Medjool Dates -->
-  <div class="col-md-6 col-12 product-card dates">
+  <div class="col-md-6 col-12 product-card dates" id="medjool">
     <div class="product-inner">
       <div class="product-header">
         <h5 class="product-title">Medjool Dates</h5>

@@ -69,7 +69,7 @@ counters.forEach((counter) => {
 const target = parseInt(counter.getAttribute("data-target"), 10);
 let count = 0;
 const increment = target / 50; // تقليل عدد الزيادات للحصول على تحديثات أسرع
-const duration = 1000; // مدة التعداد
+const duration = 3000; // مدة التعداد
 const startTime = performance.now(); // الحصول على الوقت الحالي لتحديد مدة التحديث
 // تحديث العداد باستخدام requestAnimationFrame
 function updateCount(timestamp) {
@@ -93,7 +93,7 @@ const observer = new IntersectionObserver(
 entries.forEach((entry) => {
 if (entry.isIntersecting) {
 startCounting();
-observer.disconnect(); // توقف المراقبة بعد بدء العد
+observer.unobserve(entry.target); // راقب مرة واحدة فقط
 }
 });
 },
