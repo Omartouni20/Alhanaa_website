@@ -28,7 +28,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg  navbar-dark fixed-top">
 
         <div class="container ">
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo"  href="{% url 'index' %}">
   <img id="main-logo"
        src="{% static 'images/ALHANAA_Logo_Clean.png' %}"
        alt="AL HANAA Logo"
@@ -648,7 +648,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
         <img src="{% static 'images/ALHANAA_Logo_White.png' %}" 
              alt="ALHANAA Logo" 
              class="img-fluid mb-3" 
-             style="max-width: 200px; height: auto;">
+             style="max-width: 150px; height: auto;">
         <p class="mx-auto" style="font-weight: normal; max-width: 400px;">
           Al Hanaa is a trusted grower and exporter of premium fruits, producing with sustainability and traceability at the core, delivering with integrity and precision.
         </p>
@@ -660,8 +660,8 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
         <ul class="footer-links list-unstyled">
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="#Collection">Collection</a></li>
-          <li><a href="{% url 'products' %}">Products</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'certificates' %}">Certificates</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </div>
@@ -669,7 +669,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
       <!-- Contact Info -->
       <div class="footer-section col-md-2">
         <h4>Contact Info</h4>
-        <ul class="footer-links list-unstyled">
+        <ul class="footer-links list-unstyled conact_info">
           <li>
             <a href="tel:+201093395073" class="text-white text-decoration-none d-flex align-items-center">
               <i class="fa-solid fa-phone me-2"></i> +201093395073
@@ -677,7 +677,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
           </li>
           <li>
             <a href="https://wa.me/201093395073" target="_blank" class="text-white text-decoration-none d-flex align-items-center">
-              <i class="fa-brands fa-whatsapp me-2"></i>WhatsApp Chat
+              <i class="fa-brands fa-whatsapp me-2"></i> WhatsApp Chat
             </a>
           </li>
           <li>

@@ -35,7 +35,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg  navbar-dark fixed-top">
 
         <div class="container ">
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo"  href="{% url 'index' %}">
   <img id="main-logo"
        src="{% static 'images/ALHANAA_Logo_Clean.png' %}"
        alt="AL HANAA Logo"
@@ -85,7 +85,7 @@
 </script>   
   <!-- ?======================= START About Header ====================== -->
     <div class="bgOfPage  d-flex align-items-center justify-content-center">
-     <h2>About</h2> 
+     <h2>About Us</h2> 
    </div> 
 
   <!-- ?======================= START About Content ====================== -->
@@ -219,7 +219,7 @@ With Al Hanaa, you’re not just sourcing exceptional agricultural products, you
         <img src="{% static 'images/ALHANAA_Logo_White.png' %}" 
              alt="ALHANAA Logo" 
              class="img-fluid mb-3" 
-             style="max-width: 200px; height: auto;">
+             style="max-width: 150px; height: auto;">
         <p class="mx-auto" style="font-weight: normal; max-width: 400px;">
           Al Hanaa is a trusted grower and exporter of premium fruits, producing with sustainability and traceability at the core, delivering with integrity and precision.
         </p>
@@ -231,8 +231,8 @@ With Al Hanaa, you’re not just sourcing exceptional agricultural products, you
         <ul class="footer-links list-unstyled">
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="#Collection">Collection</a></li>
-          <li><a href="{% url 'products' %}">Products</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'certificates' %}">Certificates</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </div>
@@ -240,7 +240,7 @@ With Al Hanaa, you’re not just sourcing exceptional agricultural products, you
       <!-- Contact Info -->
       <div class="footer-section col-md-2">
         <h4>Contact Info</h4>
-        <ul class="footer-links list-unstyled">
+        <ul class="footer-links list-unstyled conact_info">
           <li>
             <a href="tel:+201093395073" class="text-white text-decoration-none d-flex align-items-center">
               <i class="fa-solid fa-phone me-2"></i> +201093395073
@@ -248,7 +248,7 @@ With Al Hanaa, you’re not just sourcing exceptional agricultural products, you
           </li>
           <li>
             <a href="https://wa.me/201093395073" target="_blank" class="text-white text-decoration-none d-flex align-items-center">
-              <i class="fa-brands fa-whatsapp me-2"></i>WhatsApp Chat
+              <i class="fa-brands fa-whatsapp me-2"></i> WhatsApp Chat
             </a>
           </li>
           <li>

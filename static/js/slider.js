@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("slider");
-  const scrollStep = window.innerWidth < 768 ? 200 : 250;
-  const slideInterval = 2000;
+  const scrollStep = 2; // حركة بسيطة جدًا كل فريم
+  const slideInterval = 5; // كل 15 مللي ثانية ← بطيئة وسلسة
 
-  // === انسخ كل العناصر مرة تانية لعمل وهم التكرار ===
+  // انسخ المحتوى مرتين لخلق وهم الاستمرارية
   const slides = Array.from(slider.children);
-  slides.forEach(slide => {
-    const clone = slide.cloneNode(true);
-    slider.appendChild(clone);
-  });
+  for (let i = 0; i < 2; i++) {
+    slides.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      slider.appendChild(clone);
+    });
+  }
 
   function autoScrollSlider() {
-    slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+    slider.scrollLeft += scrollStep;
 
-    // لما نوصل للآخر جداً، نرجّع position بدون ما المستخدم يحس
-    if (slider.scrollLeft >= slider.scrollWidth / 2) {
+    // لو وصل لنهاية النسخ الأولى، نرجعه لنقطة البداية المكافئة
+    if (slider.scrollLeft >= slider.scrollWidth / 1.5) {
       slider.scrollLeft = 0;
     }
   }
@@ -29,12 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
     interval = setInterval(autoScrollSlider, slideInterval);
   }
 
+  // إيقاف الحركة لما المستخدم يتفاعل
   slider.addEventListener("mousedown", pauseAutoScroll);
   slider.addEventListener("touchstart", pauseAutoScroll);
   slider.addEventListener("mouseup", resumeAutoScroll);
   slider.addEventListener("touchend", resumeAutoScroll);
   slider.addEventListener("mouseleave", resumeAutoScroll);
 
+  // سحب بالماوس
   let isDown = false;
   let startX;
   let scrollLeft;
@@ -56,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.scrollLeft = scrollLeft - walk;
   });
 
+  // سحب باللمس
   slider.addEventListener('touchstart', (e) => {
     isDown = true;
     startX = e.touches[0].pageX;

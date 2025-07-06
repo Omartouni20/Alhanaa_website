@@ -37,7 +37,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg  navbar-dark fixed-top">
 
         <div class="container ">
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo"  href="{% url 'index' %}">
   <img id="main-logo"
        src="{% static 'images/ALHANAA_Logo_Clean.png' %}"
        alt="AL HANAA Logo"
@@ -101,7 +101,7 @@
         <div class="carousel-caption d-flex justify-content-center align-items-center layer">
           <div class="inner w-100 vh-100"></div>
 <div class="comment text-center">
-  <h1 id="hero-title" class="animated-text">ALHANAA</h1>
+  <h1 id="hero-title" class="animated-text">AL HANAA</h1>
   <p id="hero-subtitle" class="animated-text">For Agricultural Development</p>
   <h5 id="hero-slogan" class="animated-slogan text-white mt-4">
     "Rooted in Egypt, Growing for the World"
@@ -117,7 +117,7 @@
         <div class="carousel-caption d-flex justify-content-center align-items-center layer">
           <div class="inner w-100 vh-100"></div>
           <div class="comment text-center">
-            <h1>AL-HANAA</h1>
+            <h1>AL HANAA</h1>
             <p>For Agriculture Development</p>
           </div>
         </div>
@@ -128,7 +128,8 @@
 
 <!-- ?======================= START About ====================== -->
 <section id="About" class="testimonials position-relative py-2 bg__image">
-    <div class="container position-relative">
+  <div class="watermark">AL HANAA</div>
+    <div class="container position-relative" style="z-index: 1;">
         <div class="section__title d-flex-center">
             <!--<h3 class="position-relative text-capitalize text-center py-sm-5">About</h3>-->
         </div>
@@ -223,9 +224,10 @@ rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
     </div>
 </section>
 <div class="certificates-grid-wrapper my-5 py-3">
-  <div class="section__title d-flex-center mb-4">
-    <h3 class="position-relative text-capitalize text-center">certificates</h3>
-  </div>
+<div class="section__title d-flex-center mb-4">
+  <h3 class="section-heading text-center">Certificates</h3>
+</div>
+
 
   <div class="certificates-grid">
     <div class="certificate"><img src="{% static 'images/2.png' %}" alt="Certificate 2"></div>
@@ -342,9 +344,10 @@ rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
 <section class="fruit-slider-section my-5 py-4">
   <div class="container">
     <!-- العنوان -->
-    <div class="text-center mb-4">
-      <h3 class="section-title">Our Products</h3>
-    </div>
+<div class="section__title d-flex-center mb-4">
+  <h3 class="section-heading text-center">Our Products</h3>
+</div>
+
 
     <!-- السلايدر -->
     <div id="slider" class="product-slider">
@@ -496,7 +499,7 @@ rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
         <img src="{% static 'images/ALHANAA_Logo_White.png' %}" 
              alt="ALHANAA Logo" 
              class="img-fluid mb-3" 
-             style="max-width: 200px; height: auto;">
+             style="max-width: 150px; height: auto;">
         <p class="mx-auto" style="font-weight: normal; max-width: 400px;">
           Al Hanaa is a trusted grower and exporter of premium fruits, producing with sustainability and traceability at the core, delivering with integrity and precision.
         </p>
@@ -508,8 +511,8 @@ rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
         <ul class="footer-links list-unstyled">
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="#Collection">Collection</a></li>
-          <li><a href="{% url 'products' %}">Products</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'certificates' %}">Certificates</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </div>

@@ -36,7 +36,7 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
     <nav id="navbar" class="navbar navbar-expand-lg  navbar-dark fixed-top">
         <div class="container ">
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo"  href="{% url 'index' %}">
   <img id="main-logo"
        src="{% static 'images/ALHANAA_Logo_Clean.png' %}"
        alt="AL HANAA Logo"
@@ -172,28 +172,34 @@
 <footer class="footer">
   <div class="container-fluid px-5">
     <div class="footer-content row gy-2">
+
+      <!-- About -->
       <div class="footer-section col-md-5 text-center">
         <img src="{% static 'images/ALHANAA_Logo_White.png' %}" 
              alt="ALHANAA Logo" 
              class="img-fluid mb-3" 
-             style="max-width: 200px; height: auto;">
+             style="max-width: 150px; height: auto;">
         <p class="mx-auto" style="font-weight: normal; max-width: 400px;">
-          Al Hanaa is a trusted grower and exporter of premium fruits, producing with sustainability and traceability at the core, delivering with integrity and precision.
+          Al Hanaa is a trusted grower and exporter of premium fruits, producing with sustainability and traceability at the core, delivering with integrity and precision.
         </p>
       </div>
+
+      <!-- Quick Links -->
       <div class="footer-section col-md-2">
         <h4>Quick Links</h4>
         <ul class="footer-links list-unstyled">
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="#Collection">Collection</a></li>
-          <li><a href="{% url 'products' %}">Products</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'certificates' %}">Certificates</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </div>
+
+      <!-- Contact Info -->
       <div class="footer-section col-md-2">
         <h4>Contact Info</h4>
-        <ul class="footer-links list-unstyled">
+        <ul class="footer-links list-unstyled conact_info">
           <li>
             <a href="tel:+201093395073" class="text-white text-decoration-none d-flex align-items-center">
               <i class="fa-solid fa-phone me-2"></i> +201093395073
@@ -216,6 +222,8 @@
           </li>
         </ul>
       </div>
+
+      <!-- Social Media -->
       <div class="footer-section col-md-2">
         <h4>Social Media</h4>
         <div class="d-flex gap-4 mt-3 social-icons">
@@ -233,7 +241,9 @@
           </a>
         </div>
       </div>
+
     </div>
+
     <div class="copyright__box mt-4">
       <p class="copyright">
         © Copyright-2025 <span class="fw-bold">ALHANAA</span>. All Rights Reserved
