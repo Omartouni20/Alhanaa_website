@@ -74,14 +74,7 @@
         </div>
     </nav>
 <script>
-  window.addEventListener("scroll", function () {
-    const navbar = document.getElementById("navbar");
-    if (window.scrollY > 50) {
-      navbar.classList.remove("transparent-navbar");
-    } else {
-      navbar.classList.add("transparent-navbar");
-    }
-  });
+ 
 </script>   
   <!-- ?======================= START About Header ====================== -->
     <div class="bgOfPage  d-flex align-items-center justify-content-center">
@@ -305,33 +298,7 @@ With Al Hanaa, you’re not just sourcing exceptional agricultural products, you
     // Initialize AOS animation library
     AOS.init();
     
-    // Additional JavaScript for the About page animations
-    document.addEventListener("DOMContentLoaded", function() {
-      // Parallax effect for circle decorations
-      window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
-        const circle1 = document.querySelector('.circle-1');
-        const circle2 = document.querySelector('.circle-2');
-        
-        if (circle1 && circle2) {
-          circle1.style.transform = `translateY(${scrollY * 0.1}px)`;
-          circle2.style.transform = `translateY(${-scrollY * 0.05}px)`;
-        }
-      });
-      
-      // Enhanced hover effects for content blocks
-      document.querySelectorAll('.about-content').forEach(block => {
-        block.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-10px)';
-          this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
-        });
-        
-        block.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
-          this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
-        });
-      });
-    });
+   
   </script>
   </body>
 </html>

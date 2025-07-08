@@ -280,3 +280,89 @@ animationObserver.observe(el);
       navbar.classList.add("transparent-navbar");
     }
   });
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent-navbar");
+    } else {
+      navbar.classList.add("transparent-navbar");
+    }
+  });
+   document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('#productFilter button');
+    const items = document.querySelectorAll('.product-card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // شيل active من الكل وحط على الزر الحالي
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        items.forEach(item => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+   window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent-navbar");
+    } else {
+      navbar.classList.add("transparent-navbar");
+    }
+  });
+   // Additional JavaScript for the About page animations
+    document.addEventListener("DOMContentLoaded", function() {
+      // Parallax effect for circle decorations
+      window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        const circle1 = document.querySelector('.circle-1');
+        const circle2 = document.querySelector('.circle-2');
+        
+        if (circle1 && circle2) {
+          circle1.style.transform = `translateY(${scrollY * 0.1}px)`;
+          circle2.style.transform = `translateY(${-scrollY * 0.05}px)`;
+        }
+      });
+      
+      // Enhanced hover effects for content blocks
+      document.querySelectorAll('.about-content').forEach(block => {
+        block.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+          this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+        });
+        
+        block.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
+        });
+      });
+    });
+      window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent-navbar");
+    } else {
+      navbar.classList.add("transparent-navbar");
+    }
+  });
+    document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.timeline-item:not(.show-now)').forEach(item => {
+    observer.observe(item);
+  });
+});
