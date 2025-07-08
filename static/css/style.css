@@ -924,17 +924,13 @@ font-weight: bolder;
 }
 .bgOfPage {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/pages bg.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../images/pages bg.jpeg");
+background-size: cover;      /* الصورة تظهر كاملة */
+  background-repeat: no-repeat;  /* ما تتكررش */
+  background-position: center;   /* تتوسّط العنصر */
+  height: 100vh;
 }
+
 @media (max-width: 768px) {
   .bgOfPage {
     background-size: contain;
@@ -1064,8 +1060,13 @@ width: 20px;
 --bs-accordion-active-bg:#3A986C;
 }
 .contact-bg {
-background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/phone-4974179_1920.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/phone-4974179_1920.jpg);
+  background-size: cover;      /* الصورة تظهر كاملة */
+  background-repeat: no-repeat;  /* ما تتكررش */
+  background-position: center;   /* تتوسّط العنصر */
+  background-attachment: fixed;
 }
+
 /* تأثير التحديد */
 /* تأثير الكلاس highlight */
 /* تأثير لتوضيح التمرير */
@@ -1343,9 +1344,9 @@ scale: 100% 1;
 }
 }
 /* ?================== START   Contact Us =============== */
-.form-btn {
+/*.form-btn {
 background-color: #275e33c5 !important;
-}
+}*/
 .contact-form {
 position: absolute;
 right: 5%;
@@ -1645,7 +1646,7 @@ font-size: 50px;
 }
 
 .form-btn {
-background-color: #275e33c5 !important;
+background-color: #3A986C !important;
 }
 .contact-form {
 position: absolute;

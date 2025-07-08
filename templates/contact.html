@@ -90,7 +90,7 @@
       .form-group input:focus,
       .form-group textarea:focus {
         border-color: #3A986C;
-        box-shadow: 0 0 0 3px rgba(39, 94, 51, 0.1);
+        box-shadow: 0 0 0 3px #3A986C;
         background-color: #fff;
         outline: none;
       }
@@ -125,7 +125,7 @@
       .form-btn {
         width: 100%;
         padding: 15px;
-        background: linear-gradient(to right, #275e33, #3a8a4e);
+        background:   #3A986C;
         border: none;
         color: white;
         font-size: 16px;
@@ -139,7 +139,7 @@
       .form-btn:hover {
         background: linear-gradient(to right, #3A986C, #3A986C);
         transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(39, 94, 51, 0.3);
+        box-shadow: 0 8px 20px #3A986C;
       }
       
       /* Modern Company Info Styles */
@@ -458,11 +458,12 @@
     <script src="js/main.js"></script>
     <script>
       // Initialize AOS animation library
-  AOS.init({
-    once: false,
-    mirror: true,
-    duration: 1000
-  });
+AOS.init({
+  once: true,      // ✅ يخلي الأنيميشن يحصل مرة واحدة بس وميختفيش
+  mirror: false,   // ✅ يمنع إعادة ظهور/اختفاء العنصر لما يخرج ويرجع
+  duration: 1000
+});
+
 
   // تغيير لون النافبار عند التمرير
   window.addEventListener("scroll", function () {

@@ -1,87 +1,91 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // نحضر العنصر الرئيسي للـ slider
   const slider = document.getElementById("slider");
 
-  const scrollStep = 1;   // مقدار التمرير في كل فريم (كل مرة يتحرك 2 بكسل)
-  const slideInterval =2; // الفاصل الزمني بين كل تمريرة (5 مللي ثانية → سريع وسلس)
+  const scrollStep = 1;
+  const slideInterval = 15;
 
-  // نحول العناصر الداخلية لمصفوفة ونعمل لها نسخ مرتين عشان نخلق وهم الاستمرارية في التمرير
+  // تكرار السلايدات مرة واحدة فقط
   const slides = Array.from(slider.children);
-  for (let i = 0; i < 2; i++) {
-    slides.forEach(slide => {
-      const clone = slide.cloneNode(true); // ننسخ العنصر (true = ينسخ كل ما بداخله)
-      slider.appendChild(clone); // نضيف النسخة في نهاية الـ slider
-    });
+  slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    slider.appendChild(clone);
+  });
+
+  // تشغيل التمرير التلقائي
+  let autoScroll;
+  function startAutoScroll() {
+    autoScroll = setInterval(() => {
+      slider.scrollLeft += scrollStep;
+      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+        slider.scrollLeft = 0;
+      }
+    }, slideInterval);
   }
 
-  // دالة تقوم بتحريك الـ slider تلقائيًا
-  function autoScrollSlider() {
-    slider.scrollLeft += scrollStep; // نمرر لليمين بعدد بكسلات ثابت
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
+  }
 
-    // لو وصلنا لنهاية المحتوى تقريبًا، نرجعه لبداية النسخة الأصلية
-    if (slider.scrollLeft >= slider.scrollWidth / 1.5) {
-      slider.scrollLeft = 0;
+  startAutoScroll();
+
+  // التحكم بالسحب
+  let isDragging = false;
+  let startX, scrollStart;
+
+  slider.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollStart = slider.scrollLeft;
+    stopAutoScroll();
+    slider.classList.add("dragging");
+  });
+
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollStart - walk;
+  });
+
+  slider.addEventListener("mouseup", () => {
+    isDragging = false;
+    slider.classList.remove("dragging");
+    startAutoScroll();
+  });
+
+  slider.addEventListener("mouseleave", () => {
+    if (isDragging) {
+      isDragging = false;
+      slider.classList.remove("dragging");
+      startAutoScroll();
     }
-  }
-
-  // نبدأ التمرير التلقائي باستخدام setInterval
-  let interval = setInterval(autoScrollSlider, slideInterval);
-
-  // دوال لإيقاف واستئناف التمرير التلقائي
-  function pauseAutoScroll() {
-    clearInterval(interval); // نوقف الـ interval
-  }
-
-  function resumeAutoScroll() {
-    interval = setInterval(autoScrollSlider, slideInterval); // نرجعه من جديد
-  }
-
-  // --- تفاعل المستخدم يوقف التمرير مؤقتًا ---
-
-  slider.addEventListener("mousedown", pauseAutoScroll);     // لما يضغط المستخدم بالماوس
-  slider.addEventListener("touchstart", pauseAutoScroll);    // لما يلمس الشاشة على الموبايل
-  slider.addEventListener("mouseup", resumeAutoScroll);      // لما يرفع إيده عن الماوس
-  slider.addEventListener("touchend", resumeAutoScroll);     // لما يرفع إصبعه من الشاشة
-  slider.addEventListener("mouseleave", resumeAutoScroll);   // لما يخرج الماوس من العنصر
-
-  // --- تم إضافة دعم الوقوف عند الـ hover ---
-  slider.addEventListener("mouseenter", pauseAutoScroll);    // يوقف التمرير لما الماوس يدخل على العنصر
-  slider.addEventListener("mouseleave", resumeAutoScroll);   // يرجّع التمرير لما الماوس يخرج
-
-  // --- دعم السحب بالماوس (dragging) ---
-  let isDown = false;   // هل الماوس مضغوط؟
-  let startX;           // موقع البداية لمحور X
-  let scrollLeft;       // القيمة الحالية للتمرير وقت بداية السحب
-
-  slider.addEventListener('mousedown', (e) => {
-    isDown = true;                                     // بدأ السحب
-    startX = e.pageX - slider.offsetLeft;              // نحسب مكان البداية
-    scrollLeft = slider.scrollLeft;                    // نخزن التمرير الحالي
   });
 
-  slider.addEventListener('mouseleave', () => isDown = false); // لو خرج الماوس نوقف السحب
-  slider.addEventListener('mouseup', () => isDown = false);    // لو شال الماوس نوقف السحب
-
-  slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;                               // لو مش ضغطين بالماوس → مفيش حاجة تحصل
-    e.preventDefault();                                // نمنع السلوك الافتراضي (مثلاً تحديد النص)
-    const x = e.pageX - slider.offsetLeft;             // نحسب الموقع الحالي للمؤشر
-    const walk = (x - startX) * 1.5;                   // المسافة المقطوعة مضروبة في عامل سرعة
-    slider.scrollLeft = scrollLeft - walk;             // نحرك المحتوى بالسحب
+  // لمس الموبايل
+  slider.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX;
+    scrollStart = slider.scrollLeft;
+    stopAutoScroll();
   });
 
-  // --- دعم السحب باللمس (touch) ---
-  slider.addEventListener('touchstart', (e) => {
-    isDown = true;                                     // بدأ اللمس
-    startX = e.touches[0].pageX;                       // نحسب البداية من أول لمسة
-    scrollLeft = slider.scrollLeft;                    // نحفظ قيمة التمرير الحالية
+  slider.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 10) e.preventDefault();
+    slider.scrollLeft = scrollStart - walk;
+  }, { passive: false });
+
+  slider.addEventListener("touchend", () => {
+    isDragging = false;
+    startAutoScroll();
   });
 
-  slider.addEventListener('touchend', () => isDown = false); // نهاية السحب
-  slider.addEventListener('touchmove', (e) => {
-    if (!isDown) return;                               // لو مش لمس → مفيش حاجة تحصل
-    const x = e.touches[0].pageX;                      // نحسب الموضع الحالي
-    const walk = (x - startX) * 1.5;                   // المسافة المقطوعة
-    slider.scrollLeft = scrollLeft - walk;             // نحرك التمرير حسب الحركة
+  // hover يعمل pause للتلقائي
+  slider.addEventListener("mouseenter", stopAutoScroll);
+  slider.addEventListener("mouseleave", () => {
+    if (!isDragging) startAutoScroll();
   });
 });

@@ -13,6 +13,20 @@
 .product-slider::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+.product-slider {
+  -webkit-overflow-scrolling: touch; /* دعم التمرير الطبيعي في iOS */
+  touch-action: pan-y; /* منع التداخل بين السحب الأفقي والرأسي */
+}
+#slider {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#slider.dragging {
+  cursor: grabbing;
+}
+
 
 /* === Individual Slide === */
 .product-slide {
