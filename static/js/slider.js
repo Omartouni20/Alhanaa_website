@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("slider");
 
-  const scrollStep = 1;
+  const scrollStep = 3;
   const slideInterval = 15;
 
   // تكرار السلايدات مرة واحدة فقط

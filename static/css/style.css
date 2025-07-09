@@ -1071,11 +1071,18 @@ width: 20px;
 }
 .contact-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/phone-4974179_1920.webp);
-  background-size: cover;      /* الصورة تظهر كاملة */
-  background-repeat: no-repeat;  /* ما تتكررش */
-  background-position: center;   /* تتوسّط العنصر */
-  background-attachment: fixed;
+  background-size: cover;          /* ✅ الصورة بالكامل */
+  background-repeat: no-repeat;      /* ❌ ما تتكررش */
+  background-position: center center;/* ✅ تتوسّط */
+  background-attachment: fixed;      /* 📌 للخلفية الثابتة */
+  background-color: #000;            /* لون احتياطي لو الصورة مش ظهرت */
+  min-height: 100vh;                 /* ✅ تملأ الشاشة بالكامل */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* تأثير التحديد */
 /* تأثير الكلاس highlight */

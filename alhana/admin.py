@@ -1,11 +1,9 @@
 from django.contrib import admin
-from .models import ContactMessage
+from .models import ContactMessage, SiteVisit
 
 admin.site.register(ContactMessage)
-from django.contrib import admin
-from .models import SiteVisit
 
 @admin.register(SiteVisit)
 class SiteVisitAdmin(admin.ModelAdmin):
-    list_display = ('ip_address', 'timestamp')
-    ordering = ('-timestamp',)
+    list_display = ('ip_address', 'path', 'enter_time', 'exit_time', 'duration')
+    ordering = ('-enter_time',)

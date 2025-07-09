@@ -14,10 +14,18 @@ class ContactMessage(models.Model):
 
 from django.db import models
 
+from django.db import models
+
 class SiteVisit(models.Model):
     ip_address = models.GenericIPAddressField()
-    user_agent = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
+    path = models.CharField(max_length=255)
+    enter_time = models.DateTimeField(auto_now_add=True)
+    exit_time = models.DateTimeField(null=True, blank=True)
+
+    def duration(self):
+        if self.exit_time:
+            return self.exit_time - self.enter_time
+        return None
 
     def __str__(self):
-        return f"{self.ip_address} - {self.timestamp}"
+        return f"{self.ip_address} - {self.path}"
