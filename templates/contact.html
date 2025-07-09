@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    <link href="{% static 'images/Logo.jpg.png' %}" rel="icon" />
+    <link href="{% static 'images/ALHANAA_Logo_Clean.webp' %}" rel="icon" />
     <link href="{% static 'imgs/apple-touch-icon.png' %}" rel="apple-touch-icon" />
 
     <!-- External JS (CDN) -->
@@ -20,9 +20,230 @@
 
     <!-- AOS Animation Library (External CDN) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+      /* Modern Contact Form Styles */
+      .contact-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: -100px auto 0;
+        position: relative;
+        z-index: 10;
+      }
+      
+      .contact-form {
+        position: relative;
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        width: 55%;
+        transform: none;
+        right: auto;
+        top: auto;
+      }
+      
+      .contact-form h3 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 700;
+        color: #3A986C;
+        font-size: 28px;
+        position: relative;
+      }
+      
+      .contact-form h3::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(to right, #3A986C, #f7af29);
+        transition: width 0.3s ease;
+      }
+      
+      .contact-form:hover h3::after {
+        width: 100px;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+        position: relative;
+      }
+      
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        background-color: #f9f9f9;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+      
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #3A986C;
+        box-shadow: 0 0 0 3px rgba(39, 94, 51, 0.1);
+        background-color: #fff;
+        outline: none;
+      }
+      
+      .form-group label {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        color: #888;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+      
+      .form-group input:focus ~ label,
+      .form-group textarea:focus ~ label,
+      .form-group input:not(:placeholder-shown) ~ label,
+      .form-group textarea:not(:placeholder-shown) ~ label {
+        top: -10px;
+        left: 15px;
+        font-size: 12px;
+        background-color: white;
+        padding: 0 5px;
+        color: #3A986C;
+      }
+      
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: transparent;
+      }
+      
+      .form-btn {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(to right, #275e33, #3a8a4e);
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(39, 94, 51, 0.2);
+      }
+      
+      .form-btn:hover {
+        background: linear-gradient(to right, #3A986C, #3A986C);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(39, 94, 51, 0.3);
+      }
+      
+      /* Modern Company Info Styles */
+      .sub-about {
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        width: 40%;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .sub-about::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, #3A986C, #f7af29);
+      }
+      
+      .sub-about h2 {
+        text-align: center;
+        color: #3A986C;
+        font-weight: 700;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+      
+      .sub-about h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #275e33, #f7af29);
+      }
+      
+      .subabout-item {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 15px 20px;
+        transition: all 0.3s ease;
+        margin-bottom: 15px !important;
+        border-left: 3px solid #3A986C;
+      }
+      
+      .subabout-item:hover {
+        transform: translateX(5px);
+        background-color: #f0f0f0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .subabout-item i {
+        font-size: 24px;
+        color: #3A986C;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(39, 94, 51, 0.1);
+        border-radius: 50%;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+      }
+      
+      .subabout-item:hover i {
+        background-color: #3A986C;
+        color: white;
+        transform: scale(1.1);
+      }
+      
+      .subabout-item h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        color: #333;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .contact-container {
+          flex-direction: column;
+          margin-top: -50px;
+        }
+        
+        .contact-form,
+        .sub-about {
+          width: 90%;
+          margin: 0 auto 30px;
+        }
+      }
+      .navbar.scrolled {
+       background-color: #3A986C; /* نفس لون الفوتر أو اللون اللي تحبه */
+      transition: background-color 0.3s ease;
+}
+    </style>
 
     <title>Contact-ALHANAA</title>
   </head>

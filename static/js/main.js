@@ -201,8 +201,8 @@ animationObserver.observe(el);
    const logo = document.getElementById("main-logo");
 
   // المسارات كـ نص مباشر
-  const originalLogo = "/static/images/ALHANAA_Logo_Clean.png";
-  const whiteLogo = "/static/images/ALHANAA_Logo_White.png";
+  const originalLogo = "/static/images/ALHANAA_Logo_Clean.webp";
+  const whiteLogo = "/static/images/ALHANAA_Logo_White.webp";
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > 50) {

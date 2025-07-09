@@ -1,200 +1,515 @@
-// تعيين المتغيرات
-const navbar = document.getElementById("navbar");
-const navLinks = document.querySelectorAll(".nav-link");
-const btnTop = document.getElementById("btn-top");
-const sections = document.querySelectorAll("section[id]");
-// ^========= Helper functions to toggle class =========
-function toggleClass(element, className, condition) {
-if (condition) {
-element.classList.add(className);
-} else {
-element.classList.remove(className);
-}
-}
-function arrayRemoveclass(arr, className) {
-arr.forEach((ele) => {
-toggleClass(ele, className, false);
-});
-}
-// ?========= Change Background ============
-// تغيير خلفية النافبار
-function scrollHeader() {
-if (navbar) {
-toggleClass(navbar, "nav-scrolled", this.scrollY >= 50);
-}
-}
-window.addEventListener("scroll", scrollHeader);
-// ?========= Add Active class to Navbar Links ============
-// إضافة الكلاس النشط للروابط في النافبار
-navLinks.forEach((link) => {
-link.addEventListener("click", () => {
-arrayRemoveclass(navLinks, "active");
-toggleClass(link, "active", true);
-toggleClass(document.querySelector(".navbar-collapse"), "show", false);
-document.querySelector(".navbar-toggler").setAttribute("aria-expanded", "false");
-});
-});
-// ?========= Show "Back to Top" button ============
-// إظهار زر العودة للأعلى
-function showBtnTop() {
-if (btnTop) {
-toggleClass(btnTop, "show", this.scrollY >= 100);
-}
-}
-window.addEventListener("scroll", showBtnTop);
-// ?========= Form Validation ============
-// التحقق من صحة النموذج
-(() => {
-"use strict";
-const forms = document.querySelectorAll(".needs-validation");
-Array.from(forms).forEach((form) => {
-form.addEventListener(
-"submit",
-(event) => {
-if (!form.checkValidity()) {
-event.preventDefault();
-event.stopPropagation();
-}
-form.classList.add("was-validated");
-},
-false
-);
-});
+/**
+ * AL HANAA Website - Enhanced JavaScript
+ * Optimized for performance, accessibility, and cross-browser compatibility
+ */
+
+(function() {
+    'use strict';
+
+    // Feature detection and polyfills
+    const supportsIntersectionObserver = 'IntersectionObserver' in window;
+    const supportsPassiveEvents = checkPassiveEventSupport();
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // DOM elements cache
+    const elements = {
+        navbar: null,
+        btnTop: null,
+        counters: [],
+        animatedElements: [],
+        carousel: null
+    };
+
+    // Performance optimizations
+    let ticking = false;
+    let lastScrollY = 0;
+
+    /**
+     * Check if passive event listeners are supported
+     */
+    function checkPassiveEventSupport() {
+        let passiveSupported = false;
+        try {
+            const options = {
+                get passive() {
+                    passiveSupported = true;
+                    return false;
+                }
+            };
+            window.addEventListener('test', null, options);
+            window.removeEventListener('test', null, options);
+        } catch (err) {
+            passiveSupported = false;
+        }
+        return passiveSupported;
+    }
+
+    /**
+     * Debounce function for performance
+     */
+    function debounce(func, wait, immediate) {
+        let timeout;
+        return function executedFunction() {
+            const context = this;
+            const args = arguments;
+            const later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
+
+    /**
+     * Throttle function for scroll events
+     */
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
+    /**
+     * Initialize DOM elements cache
+     */
+    function cacheElements() {
+        elements.navbar = document.getElementById('navbar');
+        elements.btnTop = document.getElementById('btn-top');
+        elements.counters = document.querySelectorAll('[data-target]');
+        elements.animatedElements = document.querySelectorAll('.text-fade-in, .image-fade-in');
+        elements.carousel = document.getElementById('carouselExampleIndicators');
+    }
+
+    /**
+     * Navbar scroll behavior
+     */
+    function handleNavbarScroll() {
+        if (!elements.navbar) return;
+
+        const currentScrollY = window.pageYOffset;
+        
+        if (currentScrollY > 50) {
+            elements.navbar.classList.remove('transparent-navbar');
+            elements.navbar.classList.add('scrolled');
+        } else {
+            elements.navbar.classList.add('transparent-navbar');
+            elements.navbar.classList.remove('scrolled');
+        }
+
+        // Show/hide back to top button
+        if (elements.btnTop) {
+            if (currentScrollY > 300) {
+                elements.btnTop.classList.add('show');
+                elements.btnTop.style.opacity = '1';
+                elements.btnTop.style.right = '20px';
+            } else {
+                elements.btnTop.classList.remove('show');
+                elements.btnTop.style.opacity = '0';
+                elements.btnTop.style.right = '-50px';
+            }
+        }
+
+        lastScrollY = currentScrollY;
+    }
+
+    /**
+     * Smooth scroll to target
+     */
+    function smoothScrollTo(target, duration = 800) {
+        const targetElement = document.querySelector(target);
+        if (!targetElement) return;
+
+        const targetPosition = targetElement.offsetTop - 80; // Account for fixed navbar
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    /**
+     * Counter animation
+     */
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        function updateCounter() {
+            current += increment;
+            if (current < target) {
+                element.textContent = Math.floor(current).toLocaleString();
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target.toLocaleString();
+            }
+        }
+
+        updateCounter();
+    }
+
+    /**
+     * Intersection Observer for animations
+     */
+    function initIntersectionObserver() {
+        if (!supportsIntersectionObserver) {
+            // Fallback for browsers without Intersection Observer
+            elements.animatedElements.forEach(el => {
+                el.classList.add('visible');
+            });
+            elements.counters.forEach(counter => {
+                animateCounter(counter);
+            });
+            return;
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    
+                    if (element.classList.contains('text-fade-in') || element.classList.contains('image-fade-in')) {
+                        if (!isReducedMotion) {
+                            element.classList.add('visible');
+                        } else {
+                            element.style.opacity = '1';
+                            element.style.transform = 'none';
+                        }
+                    }
+                    
+                    if (element.hasAttribute('data-target') && !element.classList.contains('counted')) {
+                        element.classList.add('counted');
+                        if (!isReducedMotion) {
+                            setTimeout(() => animateCounter(element), 200);
+                        } else {
+                            element.textContent = element.getAttribute('data-target');
+                        }
+                    }
+                    
+                    observer.unobserve(element);
+                }
+            });
+        }, observerOptions);
+
+        // Observe animated elements
+        elements.animatedElements.forEach(el => observer.observe(el));
+        elements.counters.forEach(counter => observer.observe(counter));
+    }
+
+    /**
+     * Handle keyboard navigation
+     */
+    function initKeyboardNavigation() {
+        document.addEventListener('keydown', function(e) {
+            // Skip to main content with Tab
+            if (e.key === 'Tab' && !e.shiftKey && document.activeElement === document.body) {
+                const skipLink = document.querySelector('.sr-only-focusable');
+                if (skipLink) {
+                    skipLink.focus();
+                }
+            }
+
+            // Close mobile menu with Escape
+            if (e.key === 'Escape') {
+                const navbarCollapse = document.querySelector('.navbar-collapse.show');
+                if (navbarCollapse) {
+                    const toggleButton = document.querySelector('.navbar-toggler');
+                    if (toggleButton) {
+                        toggleButton.click();
+                    }
+                }
+            }
+        });
+    }
+
+    /**
+     * Handle touch events for mobile
+     */
+    function initTouchEvents() {
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.changedTouches[0].screenY;
+        }, supportsPassiveEvents ? { passive: true } : false);
+
+        document.addEventListener('touchend', function(e) {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, supportsPassiveEvents ? { passive: true } : false);
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartY - touchEndY;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe up - could trigger some action
+                } else {
+                    // Swipe down - could trigger some action
+                }
+            }
+        }
+    }
+
+    /**
+     * Optimize images loading
+     */
+    function initImageOptimization() {
+        // Add loading="lazy" to images that don't have it
+        const images = document.querySelectorAll('img:not([loading])');
+        images.forEach(img => {
+            if (img.getBoundingClientRect().top > window.innerHeight) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+
+        // Handle image load errors
+        document.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.target.style.display = 'none';
+                console.warn('Image failed to load:', e.target.src);
+            }
+        }, true);
+    }
+
+    /**
+     * Handle form submissions
+     */
+    function initFormHandling() {
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const submitButton = form.querySelector('button[type="submit"]');
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    
+                    // Re-enable after 3 seconds (adjust based on your needs)
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    }, 3000);
+                }
+            });
+        });
+    }
+
+    /**
+     * Handle carousel accessibility
+     */
+    function initCarouselAccessibility() {
+        if (!elements.carousel) return;
+
+        // Pause carousel on focus/hover for accessibility
+        elements.carousel.addEventListener('mouseenter', function() {
+            if (window.bootstrap && window.bootstrap.Carousel) {
+                const carousel = window.bootstrap.Carousel.getInstance(elements.carousel);
+                if (carousel) carousel.pause();
+            }
+        });
+
+        elements.carousel.addEventListener('mouseleave', function() {
+            if (window.bootstrap && window.bootstrap.Carousel) {
+                const carousel = window.bootstrap.Carousel.getInstance(elements.carousel);
+                if (carousel) carousel.cycle();
+            }
+        });
+
+        // Pause on focus for keyboard users
+        const carouselItems = elements.carousel.querySelectorAll('.carousel-item');
+        carouselItems.forEach(item => {
+            item.addEventListener('focusin', function() {
+                if (window.bootstrap && window.bootstrap.Carousel) {
+                    const carousel = window.bootstrap.Carousel.getInstance(elements.carousel);
+                    if (carousel) carousel.pause();
+                }
+            });
+        });
+    }
+
+    /**
+     * Handle product slider
+     */
+    function initProductSlider() {
+        const slider = document.getElementById('slider');
+        if (!slider) return;
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchScrollLeft = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].pageX - slider.offsetLeft;
+            touchScrollLeft = slider.scrollLeft;
+        }, supportsPassiveEvents ? { passive: true } : false);
+
+        slider.addEventListener('touchmove', (e) => {
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - touchStartX) * 2;
+            slider.scrollLeft = touchScrollLeft - walk;
+        }, supportsPassiveEvents ? { passive: true } : false);
+    }
+
+    /**
+     * Handle external links
+     */
+    function initExternalLinks() {
+        const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])');
+        externalLinks.forEach(link => {
+            if (!link.hasAttribute('target')) {
+                link.setAttribute('target', '_blank');
+            }
+            if (!link.hasAttribute('rel')) {
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    }
+
+    /**
+     * Performance monitoring
+     */
+    function initPerformanceMonitoring() {
+        if ('performance' in window) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData) {
+                        console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                        console.log('DOM content loaded:', perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart, 'ms');
+                    }
+                }, 0);
+            });
+        }
+    }
+
+    /**
+     * Initialize all functionality
+     */
+    function init() {
+        // Cache DOM elements
+        cacheElements();
+
+        // Initialize features
+        initIntersectionObserver();
+        initKeyboardNavigation();
+        initTouchEvents();
+        initImageOptimization();
+        initFormHandling();
+        initCarouselAccessibility();
+        initProductSlider();
+        initExternalLinks();
+        initPerformanceMonitoring();
+
+        // Event listeners
+        const throttledScrollHandler = throttle(handleNavbarScroll, 16);
+        window.addEventListener('scroll', throttledScrollHandler, supportsPassiveEvents ? { passive: true } : false);
+
+        // Handle smooth scrolling for anchor links
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('a[href^="#"]');
+            if (target && target.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const targetId = target.getAttribute('href');
+                smoothScrollTo(targetId);
+            }
+        });
+
+        // Handle window resize
+        const debouncedResizeHandler = debounce(function() {
+            // Recalculate any size-dependent features
+            if (elements.navbar) {
+                handleNavbarScroll();
+            }
+        }, 250);
+        
+        window.addEventListener('resize', debouncedResizeHandler);
+
+        // Handle visibility change (for performance)
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // Pause any animations or timers when page is hidden
+            } else {
+                // Resume when page becomes visible
+            }
+        });
+
+        console.log('AL HANAA Website initialized successfully');
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    // Expose some functions globally for debugging
+    window.ALHanaa = {
+        smoothScrollTo: smoothScrollTo,
+        animateCounter: animateCounter,
+        version: '2.0.0'
+    };
+
 })();
-// ?========= Start Counting Numbers ============
-document.addEventListener("DOMContentLoaded", startCounting);
-function startCounting() {
-const counters = document.querySelectorAll(".counter-num p[data-target]");
-counters.forEach((counter) => {
-const target = parseInt(counter.getAttribute("data-target"), 10);
-let count = 0;
-const increment = target / 50; // تقليل عدد الزيادات للحصول على تحديثات أسرع
-const duration = 1000; // مدة التعداد
-const startTime = performance.now(); // الحصول على الوقت الحالي لتحديد مدة التحديث
-// تحديث العداد باستخدام requestAnimationFrame
-function updateCount(timestamp) {
-const elapsed = timestamp - startTime;
-const progress = Math.min(elapsed / duration, 1); // تقدير التقدم
-// زيادة العد حسب التقدم
-count = progress * target;
-counter.innerText = Math.ceil(count) + "+";
-if (progress < 1) {
-requestAnimationFrame(updateCount); // التكرار حتى الوصول إلى الهدف
-} else {
-counter.innerText = target + "+"; // الوصول إلى العدد النهائي
-}
-}
-requestAnimationFrame(updateCount); // بدء التعداد
-});
-}
-// مراقبة العنصر عند التمرير
-const observer = new IntersectionObserver(
-(entries) => {
-entries.forEach((entry) => {
-if (entry.isIntersecting) {
-startCounting();
-observer.disconnect(); // توقف المراقبة بعد بدء العد
-}
-});
-},
-{ threshold: 0.5 }
-);
-const countersElement = document.querySelector(".counters");
-if (countersElement) {
-observer.observe(countersElement);
-}
-// مراقبة العناصر عند التمرير
-document.addEventListener("DOMContentLoaded", function () {
-const aboutSectionObserver = new IntersectionObserver(
-(entries, observer) => {
-entries.forEach((entry) => {
-if (entry.isIntersecting) {
-entry.target.classList.add("visible");
-observer.unobserve(entry.target); // التوقف عن مراقبة العنصر بعد أن يظهر
-}
-});
-},
-{ threshold: 0.5 }
-);
-// مراقبة الصورة والنصوص
-const image = document.querySelector(".image-fade-in");
-const texts = document.querySelectorAll(".text-fade-in");
-if (image) aboutSectionObserver.observe(image);
-texts.forEach((text) => {
-if (text) aboutSectionObserver.observe(text);
-});
-});
-// ?========= Highlight Item when Link is Clicked ============
-// استماع لحدث التمرير
-window.addEventListener("scroll", function () {
-// جلب جميع الأقسام
-const sections = document.querySelectorAll("section");
-// مر على كل قسم وشوف اذا كان موجود في نطاق العرض
-sections.forEach(function (section) {
-const rect = section.getBoundingClientRect();
-if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-section.classList.add("highlight"); // إضافة الكلاس عندما يظهر في الشاشة
-} else {
-section.classList.remove("highlight"); // إزالة الكلاس إذا كان خارج الشاشة
-}
-});
-});
-// Enhanced animation observer for all fade-in elements
-document.addEventListener("DOMContentLoaded", function() {
-// Add animation classes to elements
-const addAnimationClasses = () => {
-// Add to section titles
-document.querySelectorAll('.section__title h3').forEach(el => {
-el.classList.add('fade-in');
-});
-// Add to about section elements
-document.querySelectorAll('#About .my-logo').forEach(el => {
-el.classList.add('fade-in-scale');
-});
-document.querySelectorAll('#About h3').forEach(el => {
-el.classList.add('fade-in');
-});
-document.querySelectorAll('#About p').forEach((el, index) => {
-el.classList.add('fade-in');
-el.classList.add(`delay-${(index + 1) * 100}`);
-});
-// Add to counter cards
-document.querySelectorAll('.counters__card').forEach((el, index) => {
-el.classList.add('fade-in');
-el.classList.add(`delay-${(index + 1) * 100}`);
-});
-// Add to collection items
-document.querySelectorAll('.works__box').forEach((el, index) => {
-el.classList.add('fade-in');
-el.classList.add(`delay-${(index % 3 + 1) * 100}`);
-});
-// Add to certificates
-document.querySelectorAll('#About .col-lg-4').forEach((el, index) => {
-el.classList.add('fade-in-scale');
-el.classList.add(`delay-${(index + 1) * 100}`);
-});
-// Add to contact section
-document.querySelectorAll('.sub-about').forEach(el => {
-el.classList.add('fade-in-left');
-});
-};
-// Call function to add classes
-addAnimationClasses();
-// Create intersection observer
-const animationObserver = new IntersectionObserver(
-(entries, observer) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-// Unobserve after animation is triggered
-observer.unobserve(entry.target);
-}
-});
-},
-{ threshold: 0.2 } // Trigger when 20% of the element is visible
-);
-// Observe all elements with animation classes
-document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
-animationObserver.observe(el);
-});
-});
+

@@ -199,3 +199,14 @@ body {
     font-size: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .slide {
+    min-width: 80% !important;
+  }
+}
+.slider-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}

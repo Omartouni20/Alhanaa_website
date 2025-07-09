@@ -121,7 +121,7 @@ html {
 .section__title h3::after {
   position: absolute;
   content: "";
-  /*background-image: url("../images/dots.png");*/
+  /*background-image: url("../images/dots.webp");*/
   width: 100%;
   height: 30px;
   background-repeat: repeat;
@@ -517,12 +517,12 @@ h5.product-title {
 }
 
 .content1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../static/images/fruits\ bg.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../static/images/fruits\ bg.webp);
   background-size: cover;
 }
 
 .content2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../static/images/vecteezy_ai-generated-citrus-branches-with-organic-ripe-fresh-oranges_37488723.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../static/images/vecteezy_ai-generated-citrus-branches-with-organic-ripe-fresh-oranges_37488723.webp);
   background-size: cover;
   background-position: center;
 }
@@ -633,7 +633,7 @@ section.home {
 
 /* ?========= HOME - COUNTERS SECTION ========= */
 .counters {
-  background-image: url("../images/IMG_2953.JPG");
+  background-image: url("../images/IMG_2953.webp");
   /*padding-block: 4rem;*/
   color: var(--color-white);
 }
@@ -685,7 +685,7 @@ section.home {
 /* ?==================  START ABOUT =============== */
 /* ?==================  START COUNTER =============== */
 .counters {
-background-image: url("../images/IMG_2953.JPG");
+background-image: url("../images/IMG_2953.webp");
 padding-block: 8rem;
 color: var(--color-white);
 }
@@ -729,7 +729,7 @@ width: 90%; /* تأكد من أن النص داخل حدود الشاشة */
 }
 }
 .testimonials {
-/*background-image: url("../images/rm309-adj-05.jpg");*/
+/*background-image: url("../images/rm309-adj-05.webp");*/
 background-size: cover; /* اجعل الصورة تغطي الخلفية بشكل جيد */
 background-position: center;
 padding-block: 4rem;
@@ -742,7 +742,7 @@ will-change: transform, opacity;
 }
 /* ?================== START  TESTMONIALS =============== */
 .testimonials {
-/*background-image: url("../images/fruit_pattern_clean.png");*/
+/*background-image: url("../images/fruit_pattern_clean.webp");*/
 padding-block: 2rem;
 color: var(--color-white);
 position: relative;
@@ -924,7 +924,7 @@ font-weight: bolder;
 }
 .bgOfPage {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../images/pages bg.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../images/pages bg.webp");
 background-size: cover;      /* الصورة تظهر كاملة */
   background-repeat: no-repeat;  /* ما تتكررش */
   background-position: center;   /* تتوسّط العنصر */
@@ -972,7 +972,7 @@ content: "";
 display: inline-block;
 width: 50px;
 height: 50px;
-background-image: url("../images/orange_11974688.png");
+background-image: url("../images/orange_11974688.webp");
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -983,7 +983,7 @@ margin-left: 10px;
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-image: url("../images/grapefruit_3523482.png");
+  background-image: url("../images/grapefruit_3523482.webp");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -994,7 +994,7 @@ margin-left: 10px;
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-image: url("../images/datess.png"); /* تأكد إن الصورة موجودة */
+  background-image: url("../images/datess.webp"); /* تأكد إن الصورة موجودة */
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -1006,7 +1006,7 @@ content: "";
 display: inline-block;
 width: 50px;
 height: 50px;
-background-image: url("../images/mandarin_1704398.png");
+background-image: url("../images/mandarin_1704398.webp");
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -1017,7 +1017,7 @@ content: "";
 display: inline-block;
 width: 50px;
 height: 50px;
-background-image: url("../images/fruit_15613022.png");
+background-image: url("../images/fruit_15613022.webp");
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -1060,7 +1060,7 @@ width: 20px;
 --bs-accordion-active-bg:#3A986C;
 }
 .contact-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/phone-4974179_1920.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/phone-4974179_1920.webp);
   background-size: cover;      /* الصورة تظهر كاملة */
   background-repeat: no-repeat;  /* ما تتكررش */
   background-position: center;   /* تتوسّط العنصر */
@@ -1098,7 +1098,7 @@ transform: scale(1);
 }
 /* ?================== START  CONTACT =============== */
 .contact {
-background-image: url("../imgs/Background//overlay-bg.jpg");
+background-image: url("../imgs/Background//overlay-bg.webp");
 box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
 }
 .sub-about i {
@@ -1270,7 +1270,7 @@ margin-bottom: 2rem;
 color: #423c59;
 }
 .my-bg {
-background-image: url("../images/IMG_2863.JPG");
+background-image: url("../images/IMG_2863.webp");
 height: 800px;
 }
 .layer {
@@ -1344,10 +1344,11 @@ scale: 100% 1;
 }
 }
 /* ?================== START   Contact Us =============== */
+
 /*.form-btn {
 background-color: #275e33c5 !important;
 }*/
-.contact-form {
+/*.contact-form {
 position: absolute;
 right: 5%;
 top: 50%;
@@ -1365,8 +1366,8 @@ width: 300px;
 -moz-border-radius: 8px;
 -ms-border-radius: 8px;
 -o-border-radius: 8px;
-}
-.contact-form h3 {
+}*/
+/*.contact-form h3 {
 text-align: center;
 margin-bottom: 20px;
 }
@@ -1400,7 +1401,7 @@ border-radius: 5px;
 }
 .contact-form button:hover {
 background-color: #0056b3;
-}
+}*/
 .about-title h2 {
 color: #1c1c1c;
 font-size: 50px;
