@@ -1,7 +1,9 @@
 from django.shortcuts import render , redirect
 from .models import ContactMessage
 
-
+from django.contrib.admin.views.decorators import staff_member_required
+from django.shortcuts import render
+from .dashboard import get_dashboard_data
 
 
 def index_view(request):
@@ -28,3 +30,8 @@ def contact_view(request):
 
 def products_view(request):
     return render(request, 'products.html')
+
+@staff_member_required
+def admin_dashboard(request):
+    data = get_dashboard_data()
+    return render(request, 'admin/dashboard.html', data)

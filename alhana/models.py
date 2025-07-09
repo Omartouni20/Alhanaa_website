@@ -18,6 +18,7 @@ from django.db import models
 
 class SiteVisit(models.Model):
     ip_address = models.GenericIPAddressField()
+    session_key = models.CharField(max_length=40, null=True, blank=True)
     path = models.CharField(max_length=255)
     enter_time = models.DateTimeField(auto_now_add=True)
     exit_time = models.DateTimeField(null=True, blank=True)
@@ -28,4 +29,4 @@ class SiteVisit(models.Model):
         return None
 
     def __str__(self):
-        return f"{self.ip_address} - {self.path}"
+        return f"{self.ip_address} - {self.path} ({self.enter_time.strftime('%H:%M:%S')})"

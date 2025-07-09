@@ -16,19 +16,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',  # ✅ ضروري لتشغيل الفلتر humanize في القوالب
     'alhana',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # بس شغال في الإنتاج
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # شغال فقط في الإنتاج
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-'alhana.middleware.VisitorTrackingMiddleware',
+    'alhana.middleware.VisitorTrackingMiddleware',
 ]
 
 ROOT_URLCONF = 'cofing.urls'
@@ -76,11 +77,11 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# ✅ شغّل الوضع اللي يسمّع التعديلات فورًا في التطوير
+# ✅ لتفعيل staticfiles في وضع التطوير
 if DEBUG:
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
-# ✅ لو بتشتغل على Railway أو Heroku أو أي سيرفر خارجي، دايمًا فعّل دي
+# ✅ لو بتشتغل على Railway أو سيرفر خارجي
 CSRF_TRUSTED_ORIGINS = [
     'https://alhanaawebsite-production.up.railway.app'
 ]
