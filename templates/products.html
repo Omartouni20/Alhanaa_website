@@ -76,104 +76,110 @@
     <div class="my-accordin mt-5 mb-5">
       <!--<h2>Our Products</h2>-->
  
-<div class="accordion" id="accordionPanelsStayOpenExample">
+<div class="accordion my-4" id="accordionAvailability">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-      <button class="accordion-button product-accbtn" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+    <h2 class="accordion-header" id="headingAvailability">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvailability" aria-expanded="true" aria-controls="collapseAvailability">
         Availability Chart
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse" aria-labelledby="panelsStayOpen-headingOne">
+    <div id="collapseAvailability" class="accordion-collapse collapse show" aria-labelledby="headingAvailability">
       <div class="accordion-body">
-
-        <div class="table-responsive-mobile mt-3">
-          <table class="table table-light table-striped table-bordered align-middle text-center">
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle text-center availability-table">
             <thead class="table-success">
               <tr>
                 <th>Product</th>
-                <th>Jan</th>
-                <th>Feb</th>
-                <th>Mar</th>
-                <th>Apr</th>
-                <th>May</th>
-                <th>Jun</th>
-                <th>Jul</th>
-                <th>Aug</th>
-                <th>Sep</th>
-                <th>Oct</th>
-                <th>Nov</th>
-                <th>Dec</th>
+                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th>
+                <th>May</th><th>Jun</th><th>Jul</th><th>Aug</th>
+                <th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Pineapple</td>
-                <td><img src="{% static 'images/orange_11974688.webp' %}" alt=""></td>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                <td><img src="{% static 'images/orange_11974688.webp' %}" alt=""></td>
-                <td>Available</td>
+                <td data-label="Jan"><img src="{% static 'images/orange_11974688.webp' %}" alt="Pineapple" class="fruit-img"></td>
+                <td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td>
+                <td data-label="May"></td><td data-label="Jun"></td><td data-label="Jul"></td><td data-label="Aug"></td>
+                <td data-label="Sep"></td><td data-label="Oct"></td><td data-label="Nov"></td>
+                <td data-label="Dec"><img src="{% static 'images/orange_11974688.webp' %}" alt="Pineapple" class="fruit-img"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+
               <tr>
                 <td>Fremont</td>
-                <td><img src="{% static 'images/mandarin_1704398.webp' %}" alt=""></td>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                <td><img src="{% static 'images/mandarin_1704398.webp' %}" alt=""></td>
-                <td>Available</td>
+                <td data-label="Jan"><img src="{% static 'images/mandarin_1704398.webp' %}" alt="Fremont" class="fruit-img"></td>
+                <td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td>
+                <td data-label="May"></td><td data-label="Jun"></td><td data-label="Jul"></td><td data-label="Aug"></td>
+                <td data-label="Sep"></td><td data-label="Oct"></td><td data-label="Nov"></td>
+                <td data-label="Dec"><img src="{% static 'images/mandarin_1704398.webp' %}" alt="Fremont" class="fruit-img"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+
               <tr>
                 <td>Grapefruit</td>
-                <td><img src="{% static 'images/grapefruit_3523482.webp' %}" alt=""></td>
-                <td><img src="{% static 'images/grapefruit_3523482.webp' %}" alt=""></td>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                <td>Available</td>
+                <td data-label="Jan"><img src="{% static 'images/grapefruit_3523482.webp' %}" alt="Grapefruit" class="fruit-img"></td>
+                <td data-label="Feb"><img src="{% static 'images/grapefruit_3523482.webp' %}" alt="Grapefruit" class="fruit-img"></td>
+                <td data-label="Mar"></td><td data-label="Apr"></td><td data-label="May"></td><td data-label="Jun"></td>
+                <td data-label="Jul"></td><td data-label="Aug"></td><td data-label="Sep"></td><td data-label="Oct"></td>
+                <td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+
               <tr>
                 <td>Early Sweet Grapes</td>
-                <td></td><td></td><td></td><td></td>
-                <td><img src="{% static 'images/grapes_image_1-removebg-preview.webp' %}" alt=""></td>
-                <td><img src="{% static 'images/grapes_image_1-removebg-preview.webp' %}" alt=""></td>
-                <td></td><td></td><td></td><td></td><td></td><td></td>
-                <td>Available</td>
+                <td data-label="Jan"></td><td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td>
+                <td data-label="May"><img src="{% static 'images/grapes_image_1-removebg-preview.webp' %}" alt="Early Sweet" class="fruit-img"></td>
+                <td data-label="Jun"><img src="{% static 'images/grapes_image_1-removebg-preview.webp' %}" alt="Early Sweet" class="fruit-img"></td>
+                <td data-label="Jul"></td><td data-label="Aug"></td><td data-label="Sep"></td><td data-label="Oct"></td>
+                <td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+
               <tr>
                 <td>Flame Grapes</td>
-                <td></td><td></td><td></td><td></td>
-                <td><img src="{% static 'images/grapes_image_2-removebg-preview.webp' %}" alt=""></td>
-                <td><img src="{% static 'images/grapes_image_2-removebg-preview.webp' %}" alt=""></td>
-                <td></td><td></td><td></td><td></td><td></td><td></td>
-                <td>Available</td>
+                <td data-label="Jan"></td><td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td>
+                <td data-label="May"><img src="{% static 'images/grapes_image_2-removebg-preview.webp' %}" alt="Flame" class="fruit-img"></td>
+                <td data-label="Jun"><img src="{% static 'images/grapes_image_2-removebg-preview.webp' %}" alt="Flame" class="fruit-img"></td>
+                <td data-label="Jul"></td><td data-label="Aug"></td><td data-label="Sep"></td><td data-label="Oct"></td>
+                <td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+
               <tr>
                 <td>Thompson Grapes</td>
-                <td></td><td></td><td></td><td></td><td></td><td></td>
-                <td><img src="{% static 'images/grapes_image_3-removebg-preview.webp' %}" alt=""></td>
-                <td></td><td></td><td></td><td></td><td></td>
-                <td>Available</td>
+                <td data-label="Jan"></td><td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td><td data-label="May"></td><td data-label="Jun"></td>
+                <td data-label="Jul"><img src="{% static 'images/grapes_image_3-removebg-preview.webp' %}" alt="Thompson" class="fruit-img"></td>
+                <td data-label="Aug"></td><td data-label="Sep"></td><td data-label="Oct"></td><td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+
               <tr>
                 <td>Barhi Dates</td>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                <td><img src="{% static 'images/golden-date-fruit-icon-isometric-food-palm-vector-removebg-preview.webp' %}" alt=""></td>
-                <td></td><td></td><td></td><td></td>
-                <td>Available</td>
+                <td data-label="Jan"></td><td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td><td data-label="May"></td><td data-label="Jun"></td>
+                <td data-label="Jul"></td>
+                <td data-label="Aug"><img src="{% static 'images/golden-date-fruit-icon-isometric-food-palm-vector-removebg-preview.webp' %}" alt="Barhi" class="fruit-img"></td>
+                <td data-label="Sep"></td><td data-label="Oct"></td><td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+
               <tr>
                 <td>Medjool Dates</td>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                <td></td>
-                <td><img src="{% static 'images/datess.webp' %}" alt=""></td>
-                <td></td><td></td><td></td>
-                <td>Available</td>
+                <td data-label="Jan"></td><td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td><td data-label="May"></td><td data-label="Jun"></td>
+                <td data-label="Jul"></td><td data-label="Aug"></td>
+                <td data-label="Sep"><img src="{% static 'images/datess.webp' %}" alt="Medjool" class="fruit-img"></td>
+                <td data-label="Oct"></td><td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
             </tbody>
           </table>
         </div>
-
       </div>
     </div>
   </div>
 </div>
+
 
     <!--<div class="Ornage " id="orang">
     <div class="my-accordin mt-5 mb-5">
@@ -307,7 +313,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
     <div class="row">
 <div class="row" id="productList">
 <!-- Filter Tabs -->
-<ul class="nav nav-pills justify-content-center mb-4" id="productFilter">
+<!--<ul class="nav nav-pills justify-content-center mb-4" id="productFilter">
   <li class="nav-item">
     <button class="nav-link active" data-filter="all">All</button>
   </li>
@@ -320,7 +326,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
   <li class="nav-item">
     <button class="nav-link" data-filter="dates">Dates</button>
   </li>
-</ul>
+</ul>-->
 
   <!-- Pineapple Orange -->
   

@@ -30,7 +30,15 @@
     .timeline-content img { max-width: 130px; margin-bottom: 20px; }
     .timeline-content h4 { font-size: 1.7rem; font-weight: bold; margin-bottom: 10px; }
     .timeline-content p { font-size: 1.15rem; line-height: 1.8; color: #333; }
-    @media (max-width: 768px) { .timeline::before { left: 8px; } .timeline-item::after { left: 8px; transform: none; } .timeline-content { max-width: 100%; } }
+    @media (max-width: 768px) {html {
+  overflow-x: hidden;
+}
+
+.container, .row, .col-md-6, .timeline, .timeline-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+ .timeline::before { left: 8px; } .timeline-item::after { left: 8px; transform: none; } .timeline-content { max-width: 100%;  } }
   </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">

@@ -1106,6 +1106,64 @@ transform: scale(1);
 -o-transform:;
 }
 }
+.fruit-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.fruit-img:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+.availability-table tbody tr:hover {
+  background-color: #f1fdf3;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 767.98px) {
+  .availability-table thead {
+    display: none;
+  }
+
+  .availability-table, .availability-table tbody, .availability-table tr, .availability-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .availability-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #fff;
+  }
+
+  .availability-table td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .availability-table td::before {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.75rem;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #3A986C;
+    content: attr(data-label);
+  }
+}
+
 /* ?================== START  CONTACT =============== */
 .contact {
 background-image: url("../imgs/Background//overlay-bg.webp");
