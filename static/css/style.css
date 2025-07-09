@@ -754,13 +754,23 @@ position: relative;
   transform: translate(-50%, -50%);
   font-size: 270px;
   font-weight: 900;
-  color: rgba(0, 0, 0, 0.025); /* بهتان خفيف جدًا */
+  color: rgba(0, 0, 0, 0.025);
   z-index: 0;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
   font-family: var(--font-main);
+  max-width: 100vw; /* 👈 تمنع كسر حدود العرض */
+  overflow: hidden; /* 👈 تمنع التسرب خارج العنصر */
 }
+@media (max-width: 768px) {
+  .watermark {
+    display: none;
+  }
+}
+
+
+
 
 /* Modern Animation Classes */
 .fade-in {
