@@ -1,3 +1,8 @@
+// Fallback لـ متصفحات قديمة
+window.requestAnimationFrame = window.requestAnimationFrame || function(cb) {
+  return setTimeout(cb, 16);
+};
+window.cancelAnimationFrame = window.cancelAnimationFrame || clearTimeout;
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("slider");
 

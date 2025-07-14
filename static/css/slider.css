@@ -72,6 +72,9 @@
   .product-slider {
     gap: 8px;
     padding: 0 10px 10px 10px;
+      touch-action: auto;
+        width: 240px;
+  flex: 0 0 auto;
   }
 
   .product-slide {
@@ -85,4 +88,8 @@
   .product-name {
     font-size: 0.9rem;
   }
+  .product-slider.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
 }
