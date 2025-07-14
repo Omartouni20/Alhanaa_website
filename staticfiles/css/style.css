@@ -600,7 +600,7 @@ button[aria-expanded="false"] .btn__menu__close {
 /* PRODUCTS PAGE */
 .bgOfPage {
   height: 40vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/colorful-collage-fruits-texture-close-up.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/colorful-collage-fruits-texture-close-up.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
