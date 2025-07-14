@@ -241,10 +241,32 @@ nav .nav-link::before {
 /* ?========= NAVBAR (All Pages) ========= */
 .navbar 
 /* ?========= NAVBAR (All Pages) ========= */
-.navbar-toggler {
+/*.navbar-toggler {
   border: none;
   position: relative;
   padding: 20px;
+}*/
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 15px;
+  position: relative;
+  z-index: 1001;
+}
+.btn__menu__open,
+.btn__menu__close {
+  font-size: 30px;
+  color: var(--color-white);
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+}
+
+.btn__menu__open:hover,
+.btn__menu__close:hover {
+  transform: scale(1.15);
 }
 
 /* ?========= NAVBAR (All Pages) ========= */
