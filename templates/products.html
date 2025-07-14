@@ -172,6 +172,24 @@
                 <td data-label="Oct"></td><td data-label="Nov"></td><td data-label="Dec"></td>
                 <td data-label="Status"><span class="badge bg-success">Available</span></td>
               </tr>
+              
+              <tr>
+                <td>Olives</td>
+                <td data-label="Jan"></td><td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td><td data-label="May"></td><td data-label="Jun"></td>
+                <td data-label="Jul"></td><td data-label="Aug"><img src="{% static 'images/olive icon chart.webp' %}" alt="Medjool" class="fruit-img"></td>
+                <td data-label="Sep"></td>
+                <td data-label="Oct"></td><td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
+              </tr>
+
+                <tr>
+                <td>Prickly Pear</td>
+                <td data-label="Jan"></td><td data-label="Feb"></td><td data-label="Mar"></td><td data-label="Apr"></td><td data-label="May"></td><td data-label="Jun"></td>
+                <td data-label="Jul"><img src="{% static 'images/Prickly Pear icon.webp' %}" alt="Thompson" class="fruit-img"></td>
+                <td data-label="Aug"></td><td data-label="Sep"></td><td data-label="Oct"></td><td data-label="Nov"></td><td data-label="Dec"></td>
+                <td data-label="Status"><span class="badge bg-success">Available</span></td>
+              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -309,10 +327,24 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
 
 <!-- Test -->
 <!-- ====== START: Filterable Product List ====== -->
+ 
   <div class="container">
     <div class="row">
 <div class="row" id="productList">
 <!-- Filter Tabs -->
+<div class="product-dropdown">
+  <select id="productFilter">
+    <option value="all">All Products</option>
+    <option value="citrus">Citrus</option>
+    <option value="grapes">Grapes</option>
+    <option value="dates">Dates</option>
+    <option value="Prickly Pear">Prickly Pear</option>
+    <option value="Olives">Olives</option>
+  </select>
+</div>
+
+
+
 <!--<ul class="nav nav-pills justify-content-center mb-4" id="productFilter">
   <li class="nav-item">
     <button class="nav-link active" data-filter="all">All</button>
@@ -379,18 +411,18 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
           <span class="badge bg-success">Available</span>
         </div>
         <div class="d-flex flex-wrap gap-1">
-          <span class="badge bg-secondary">Jan</span>
-          <span class="badge bg-secondary">Feb</span>
-          <span class="badge bg-success">Mar</span>
-          <span class="badge bg-success">Apr</span>
+          <span class="badge bg-success">Jan</span>
+          <span class="badge bg-success">Feb</span>
+          <span class="badge bg-secondary">Mar</span>
+          <span class="badge bg-secondary">Apr</span>
           <span class="badge bg-secondary">May</span>
           <span class="badge bg-secondary">Jun</span>
           <span class="badge bg-secondary">Jul</span>
           <span class="badge bg-secondary">Aug</span>
           <span class="badge bg-secondary">Sep</span>
-          <span class="badge bg-success">Oct</span>
-          <span class="badge bg-success">Nov</span>
-          <span class="badge bg-success">Dec</span>
+          <span class="badge bg-secondary">Oct</span>
+          <span class="badge bg-secondary">Nov</span>
+          <span class="badge bg-secondary">Dec</span>
         </div>
       </div>
     </div>
@@ -413,7 +445,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
         </div>
         <div class="d-flex flex-wrap gap-1">
           <span class="badge bg-success">Jan</span>
-          <span class="badge bg-success">Feb</span>
+          <span class="badge bg-secondary">Feb</span>
           <span class="badge bg-secondary">Mar</span>
           <span class="badge bg-secondary">Apr</span>
           <span class="badge bg-secondary">May</span>
@@ -423,7 +455,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
           <span class="badge bg-secondary">Sep</span>
           <span class="badge bg-secondary">Oct</span>
           <span class="badge bg-secondary">Nov</span>
-          <span class="badge bg-secondary">Dec</span>
+          <span class="badge bg-success">Dec</span>
         </div>
       </div>
     </div>
@@ -481,10 +513,10 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
           <span class="badge bg-secondary">Jan</span>
           <span class="badge bg-secondary">Feb</span>
           <span class="badge bg-secondary">Mar</span>
-          <span class="badge bg-success">Apr</span>
-          <span class="badge bg-success">May</span>
-          <span class="badge bg-success">Jun</span>
-          <span class="badge bg-secondary">Jul</span>
+          <span class="badge bg-secondary">Apr</span>
+          <span class="badge bg-secondary">May</span>
+          <span class="badge bg-secondary">Jun</span>
+          <span class="badge bg-success">Jul</span>
           <span class="badge bg-secondary">Aug</span>
           <span class="badge bg-secondary">Sep</span>
           <span class="badge bg-secondary">Oct</span>
@@ -517,7 +549,7 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
           <span class="badge bg-secondary">Apr</span>
           <span class="badge bg-success">May</span>
           <span class="badge bg-success">Jun</span>
-          <span class="badge bg-success">Jul</span>
+          <span class="badge bg-secondary">Jul</span>
           <span class="badge bg-secondary">Aug</span>
           <span class="badge bg-secondary">Sep</span>
           <span class="badge bg-secondary">Oct</span>
@@ -550,9 +582,9 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
           <span class="badge bg-secondary">Apr</span>
           <span class="badge bg-secondary">May</span>
           <span class="badge bg-secondary">Jun</span>
-          <span class="badge bg-success">Jul</span>
+          <span class="badge bg-secondary">Jul</span>
           <span class="badge bg-success">Aug</span>
-          <span class="badge bg-success">Sep</span>
+          <span class="badge bg-secondary">Sep</span>
           <span class="badge bg-secondary">Oct</span>
           <span class="badge bg-secondary">Nov</span>
           <span class="badge bg-secondary">Dec</span>
@@ -586,13 +618,80 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
           <span class="badge bg-secondary">Jul</span>
           <span class="badge bg-secondary">Aug</span>
           <span class="badge bg-success">Sep</span>
-          <span class="badge bg-success">Oct</span>
-          <span class="badge bg-success">Nov</span>
+          <span class="badge bg-secondary">Oct</span>
+          <span class="badge bg-secondary">Nov</span>
           <span class="badge bg-secondary">Dec</span>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Prickly Pear -->
+<div class="col-md-6 col-12 product-card Prickly Pear" id="prickly-pear">
+  <div class="product-inner">
+    <div class="product-header">
+      <h5 class="product-title">Prickly Pear</h5>
+      <div class="leaf-shape"><img src="/static/images/prickly-icon.webp" alt=""></div>
+    </div>
+    <p class="product-desc">
+      Prickly Pear is a cactus fruit recognized for its oval shape, vibrant skin color ranging from green to deep red, and refreshingly sweet taste. Rich in antioxidants and hydration properties.
+    </p>
+    <div class="product-timeline mb-3">
+      <div class="d-flex align-items-center mb-2">
+        <strong class="me-2">Prickly Pear</strong>
+        <span class="badge bg-success">Available</span>
+      </div>
+      <div class="d-flex flex-wrap gap-1">
+        <span class="badge bg-secondary">Jan</span>
+        <span class="badge bg-secondary">Feb</span>
+        <span class="badge bg-secondary">Mar</span>
+        <span class="badge bg-secondary">Apr</span>
+        <span class="badge bg-secondary">May</span>
+        <span class="badge bg-secondary">Jun</span>
+        <span class="badge bg-success">Jul</span>
+        <span class="badge bg-secondary">Aug</span>
+        <span class="badge bg-secondary">Sep</span>
+        <span class="badge bg-secondary">Oct</span>
+        <span class="badge bg-secondary">Nov</span>
+        <span class="badge bg-secondary">Dec</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Olives -->
+<div class="col-md-6 col-12 product-card Olives" id="olives">
+  <div class="product-inner">
+    <div class="product-header">
+      <h5 class="product-title">Olives</h5>
+      <div class="leaf-shape"><img src="/static/images/olive-icon.webp" alt=""></div>
+    </div>
+    <p class="product-desc">
+      Olives are one of the most versatile Mediterranean fruits. Known for their rich flavor and oil content, they are harvested at different stages for green and black types.
+    </p>
+    <div class="product-timeline mb-3">
+      <div class="d-flex align-items-center mb-2">
+        <strong class="me-2">Olives</strong>
+        <span class="badge bg-success">Available</span>
+      </div>
+      <div class="d-flex flex-wrap gap-1">
+        <span class="badge bg-secondary">Jan</span>
+        <span class="badge bg-secondary">Feb</span>
+        <span class="badge bg-secondary">Mar</span>
+        <span class="badge bg-secondary">Apr</span>
+        <span class="badge bg-secondary">May</span>
+        <span class="badge bg-secondary">Jun</span>
+        <span class="badge bg-secondary">Jul</span>
+        <span class="badge bg-success">Aug</span>
+        <span class="badge bg-secondary">Sep</span>
+        <span class="badge bg-secondary">Oct</span>
+        <span class="badge bg-secondary">Nov</span>
+        <span class="badge bg-secondary">Dec</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </div>
    
@@ -698,6 +797,6 @@ Medjool dates, known as the king of dates is a premium variety prized for its im
     
     <!--^======= JS Files ======= -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

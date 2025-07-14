@@ -199,14 +199,10 @@ window.addEventListener("scroll", function () {
 //slider.addEventListener('mouseleave', () => isPaused = false);
 
 // =================== بريلودر ===================
-window.addEventListener("load", function () {
-  const preloader = document.getElementById("preloader");
-  preloader.style.opacity = "0";
-  setTimeout(() => preloader.style.display = "none", 1000);
-});
+
 
 // =================== AOS Animation Init ===================
-AOS.init({ duration: 1000, once: true });
+//AOS.init({ duration: 1000, once: true });
 
 // =================== تفعيل عناصر Timeline ===================
 document.addEventListener('DOMContentLoaded', () => {
@@ -235,17 +231,24 @@ window.addEventListener("scroll", function () {
 
 // =================== فلترة المنتجات ===================
 document.addEventListener('DOMContentLoaded', function () {
-  const buttons = document.querySelectorAll('#productFilter button');
-  const items = document.querySelectorAll('.product-card');
+  const filterDropdown = document.getElementById('productFilter');
+  const productCards = document.querySelectorAll('.product-card');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
-      items.forEach(item => {
-        item.style.display = (filter === 'all' || item.classList.contains(filter)) ? 'block' : 'none';
-      });
+  if (!filterDropdown || productCards.length === 0) {
+    console.warn("⚠️ Dropdown أو المنتجات مش موجودين");
+    return;
+  }
+
+  filterDropdown.addEventListener('change', () => {
+    const filter = filterDropdown.value;
+    console.log("🔍 اختيار المستخدم:", filter);
+
+    productCards.forEach(card => {
+      if (filter === 'all' || card.classList.contains(filter)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
     });
   });
 });

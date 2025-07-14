@@ -1,95 +1,79 @@
-/* ========== السلايدر الرئيسي ========== */
+   * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
 .product-slider {
   display: flex;
-  overflow-x: auto; /* يسمح بالتمرير الأفقي */
-  scroll-behavior: smooth; /* تمرير ناعم */
-  gap: 16px; /* المسافة بين كل عنصر */
-  padding-bottom: 10px;
-  -webkit-overflow-scrolling: touch; /* تحسين التمرير للموبايل */
-  touch-action: pan-y;
-  scrollbar-width: none; /* إخفاء السطر في فايرفوكس */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 10px 12px 20px;
+  -webkit-overflow-scrolling: touch;
+  touch-action: auto;
   white-space: nowrap;
-  max-width: 100%;
-  box-sizing: border-box;
+  scrollbar-width: none;
+  width: 100vw; /* ✅ مهم جداً للموبايل */
+  max-width: 100vw; /* يمنع الانكماش */
 }
 
-/* إخفاء السطر في كروم */
-.product-slider::-webkit-scrollbar {
-  display: none;
-}
 
-/* ========== كل منتج داخل السلايدر ========== */
-.product-slide {
-  min-width: 240px;
-  flex: 0 0 auto;
-  transition: transform 0.25s ease-in-out;
-  text-align: center;
-}
+    .product-slider::-webkit-scrollbar {
+      display: none;
+    }
 
-/* ========== صورة المنتج ========== */
-.product-slide img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
+    .product-slider.dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
 
-/* تكبير الصورة عند تمرير الماوس */
-.product-slide img:hover {
-  transform: scale(1.05);
-}
+    .product-slide {
+      flex: 0 0 auto;
+      width: 200px;
+      text-align: center;
+    }
 
-/* ========== اسم المنتج ========== */
-.product-name {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: black;
-  margin-top: 10px;
-  transition: color 0.3s ease;
-}
+    .product-slide img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
 
-/* الروابط */
-.product-slide a {
-  text-decoration: none;
-}
+    .product-slide img:hover {
+      transform: scale(1.05);
+    }
 
-/* تغيير لون اسم المنتج عند المرور */
-.product-slide a:hover .product-name {
-  color: #3A986C;
-}
+    .product-name {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: black;
+    }
 
-/* ========== عنوان القسم ========== */
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000;
-  text-align: center;
-}
+    @media (max-width: 768px) {
+      .product-slide {
+        width: 140px;
+      }
 
-/* ========== إعدادات الموبايل ========== */
-@media (max-width: 768px) {
-  .product-slider {
-    gap: 8px;
-    padding: 0 10px 10px 10px;
-      touch-action: auto;
-        width: 240px;
-  flex: 0 0 auto;
-  }
+      .product-slide img {
+        height: 100px;
+      }
 
-  .product-slide {
-    min-width: 140px;
-  }
-
-  .product-slide img {
-    height: 130px;
-  }
-
-  .product-name {
-    font-size: 0.9rem;
-  }
-  .product-slider.dragging {
-  cursor: grabbing;
-  user-select: none;
-}
-}
+      .product-name {
+        font-size: 0.9rem;
+      }
+    }
+ 

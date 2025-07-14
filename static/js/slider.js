@@ -1,104 +1,85 @@
-// Fallback لـ متصفحات قديمة
-window.requestAnimationFrame = window.requestAnimationFrame || function(cb) {
-  return setTimeout(cb, 16);
-};
-window.cancelAnimationFrame = window.cancelAnimationFrame || clearTimeout;
-document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.getElementById("slider");
+   const slider = document.getElementById("slider");
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
 
-  // سرعة التمرير
-  let scrollSpeed = 0.5;
-  let autoScroll;
+    // fallback للمتصفحات القديمة
+    window.requestAnimationFrame = window.requestAnimationFrame || function(cb) {
+      return setTimeout(cb, 16);
+    };
+    window.cancelAnimationFrame = window.cancelAnimationFrame || clearTimeout;
 
-  // ========== تكرار العناصر مرتين إضافيتين ========== //
-  const originalSlides = Array.from(slider.children);
-  for (let i = 0; i < 2; i++) {
-    originalSlides.forEach(slide => {
-      const clone = slide.cloneNode(true);
-      slider.appendChild(clone);
-    });
-  }
-
-  // ========== التمرير التلقائي باستخدام requestAnimationFrame ========== //
-  function autoScrollLoop() {
-    slider.scrollLeft += scrollSpeed;
-
-    const threshold = slider.scrollWidth / 3;
-    if (slider.scrollLeft >= threshold * 2) {
-      slider.scrollLeft = threshold;
+    // === التمرير التلقائي ===
+    let autoScroll;
+    function autoScrollLoop() {
+      slider.scrollLeft += 1;
+      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+        slider.scrollLeft = 0;
+      }
+      autoScroll = requestAnimationFrame(autoScrollLoop);
+    }
+    function startAutoScroll() {
+      autoScroll = requestAnimationFrame(autoScrollLoop);
+    }
+    function stopAutoScroll() {
+      cancelAnimationFrame(autoScroll);
     }
 
-    autoScroll = requestAnimationFrame(autoScrollLoop);
-  }
-
-  function startAutoScroll() {
-    autoScroll = requestAnimationFrame(autoScrollLoop);
-  }
-
-  function stopAutoScroll() {
-    cancelAnimationFrame(autoScroll);
-  }
-
-  startAutoScroll();
-
-  // ========== السحب بالماوس ========== //
-  let isDragging = false;
-  let startX, scrollStart;
-
-  slider.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollStart = slider.scrollLeft;
-    stopAutoScroll();
-    slider.classList.add("dragging");
-  });
-
-  slider.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.2;
-    slider.scrollLeft = scrollStart - walk;
-  });
-
-  slider.addEventListener("mouseup", () => {
-    isDragging = false;
-    slider.classList.remove("dragging");
     startAutoScroll();
-  });
 
-  slider.addEventListener("mouseleave", () => {
-    if (isDragging) {
+    // === السحب بالماوس ===
+    slider.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      stopAutoScroll();
+      slider.classList.add("dragging");
+    });
+
+    slider.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    slider.addEventListener("mouseup", () => {
       isDragging = false;
       slider.classList.remove("dragging");
       startAutoScroll();
-    }
-  });
+    });
 
-  // ========== السحب بالتاتش للموبايل ========== //
-  slider.addEventListener("touchstart", (e) => {
-    isDragging = true;
-    startX = e.touches[0].pageX;
-    scrollStart = slider.scrollLeft;
-    stopAutoScroll();
-  });
+    slider.addEventListener("mouseleave", () => {
+      if (isDragging) {
+        isDragging = false;
+        slider.classList.remove("dragging");
+        startAutoScroll();
+      }
+    });
 
-  slider.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 1.2;
-    if (Math.abs(walk) > 10) e.preventDefault(); // يمنع التمرير الرأسي
-    slider.scrollLeft = scrollStart - walk;
-  }, { passive: false });
+    // === السحب بالتاتش ===
+    slider.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX;
+      scrollLeft = slider.scrollLeft;
+      stopAutoScroll();
+    });
 
-  slider.addEventListener("touchend", () => {
-    isDragging = false;
-    startAutoScroll();
-  });
+    slider.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX;
+      const walk = (x - startX) * 1.5;
+      if (Math.abs(walk) > 10) e.preventDefault();
+      slider.scrollLeft = scrollLeft - walk;
+    }, { passive: false });
 
-  // ========== إيقاف وتشغيل التمرير التلقائي عند الدخول والخروج بالماوس ========== //
-  slider.addEventListener("mouseenter", stopAutoScroll);
-  slider.addEventListener("mouseleave", () => {
-    if (!isDragging) startAutoScroll();
-  });
-});
+    slider.addEventListener("touchend", () => {
+      isDragging = false;
+      startAutoScroll();
+    });
+
+    slider.addEventListener("mouseenter", stopAutoScroll);
+    slider.addEventListener("mouseleave", () => {
+      if (!isDragging) startAutoScroll();
+    });
