@@ -366,73 +366,228 @@ rooted in Egypt and growing for the world, Al Hanaa is a modern agricultural com
 </div>-->
 <!--
 </section>-->
-<section class="fruit-slider-section my-5 py-4">
-  <div class="container">
-    <!-- العنوان -->
-    <div class="section__title d-flex-center mb-4">
-      <h3 class="section-heading text-center">Our Products</h3>
+ <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+.product-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 10px 12px 20px;
+  -webkit-overflow-scrolling: touch;
+  touch-action: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  width: 100vw; /* ✅ مهم جداً للموبايل */
+  max-width: 100vw; /* يمنع الانكماش */
+}
+
+
+    .product-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-slider.dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+
+    .product-slide {
+      flex: 0 0 auto;
+      width: 200px;
+      text-align: center;
+    }
+
+    .product-slide img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-slide img:hover {
+      transform: scale(1.05);
+    }
+
+    .product-name {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .product-slide {
+        width: 140px;
+      }
+
+      .product-slide img {
+        height: 100px;
+      }
+
+      .product-name {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 class="section-title">Featured Products</h2>
+
+  <div id="slider" class="product-slider">
+    <div class="product-slide">
+      <a href="{% url 'products' %}#pineapple">
+        <img src="{% static 'images/pineapple products.webp' %}" alt="Pineapple">
+        <p class="product-name">Pineapple Orange</p>
+      </a>
     </div>
-
-    <!-- السلايدر -->
-    <div id="slider" class="product-slider">
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#pineapple">
-          <img src="/static/images/pineapple products.webp" alt="Pineapple">
-          <p class="product-name mt-2">Pineapple Orange</p>
-        </a>
-      </div>
-
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#fremont">
-          <img src="/static/images/fremont products.webp" alt="Fremont">
-          <p class="product-name mt-2">Fremont Mandarin</p>
-        </a>
-      </div>
-
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#grapefruit">
-          <img src="/static/images/grapefruit products.webp" alt="Grapefruit">
-          <p class="product-name mt-2">Grapefruit</p>
-        </a>
-      </div>
-
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#earlysweat">
-          <img src="/static/images/early products.webp" alt="Early Sweat">
-          <p class="product-name mt-2">Early Sweat Grapes</p>
-        </a>
-      </div>
-
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#flame">
-          <img src="/static/images/flame products.webp" alt="Flame">
-          <p class="product-name mt-2">Flame Grapes</p>
-        </a>
-      </div>
-
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#thomson">
-          <img src="/static/images/thomson products.webp" alt="Thomson">
-          <p class="product-name mt-2">Thomson Grapes</p>
-        </a>
-      </div>
-
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#medjool">
-          <img src="/static/images/medjool products.webp" alt="Medjool">
-          <p class="product-name mt-2">Medjool Dates</p>
-        </a>
-      </div>
-
-      <div class="product-slide text-center">
-        <a href="{% url 'products' %}#barhi">
-          <img src="/static/images/barhi products.webp" alt="Barhi">
-          <p class="product-name mt-2">Barhi Dates</p>
-        </a>
-      </div>
+    <div class="product-slide">
+      <a href="{% url 'products' %}#fremont">
+        <img src="{% static 'images/fremont products.webp' %}" alt="Fremont">
+        <p class="product-name">Fremont Mandarin</p>
+      </a>
+    </div>
+    <div class="product-slide">
+      <a href="{% url 'products' %}#grapefruit">
+        <img src="{% static 'images/grapefruit products.webp' %}" alt="Grapefruit">
+        <p class="product-name">Grapefruit</p>
+      </a>
+    </div>
+    <div class="product-slide">
+      <a href="{% url 'products' %}#earlysweat">
+        <img src="{% static 'images/early products.webp' %}" alt="Early Sweat">
+        <p class="product-name">Early Sweat Grapes</p>
+      </a>
+    </div>
+    <div class="product-slide">
+      <a href="{% url 'products' %}#flame">
+        <img src="{% static 'images/flame products.webp' %}" alt="Flame">
+        <p class="product-name">Flame Grapes</p>
+      </a>
+    </div>
+    <div class="product-slide">
+      <a href="{% url 'products' %}#thomson">
+        <img src="{% static 'images/thomson products.webp' %}" alt="Thomson">
+        <p class="product-name">Thomson Grapes</p>
+      </a>
+    </div>
+    <div class="product-slide">
+      <a href="{% url 'products' %}#medjool">
+        <img src="{% static 'images/medjool products.webp' %}" alt="Medjool">
+        <p class="product-name">Medjool Dates</p>
+      </a>
+    </div>
+    <div class="product-slide">
+      <a href="{% url 'products' %}#barhi">
+        <img src="{% static 'images/barhi products.webp' %}" alt="Barhi">
+        <p class="product-name">Barhi Dates</p>
+      </a>
     </div>
   </div>
-</section>
+
+  <script>
+    const slider = document.getElementById("slider");
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    // fallback للمتصفحات القديمة
+    window.requestAnimationFrame = window.requestAnimationFrame || function(cb) {
+      return setTimeout(cb, 16);
+    };
+    window.cancelAnimationFrame = window.cancelAnimationFrame || clearTimeout;
+
+    // === التمرير التلقائي ===
+    let autoScroll;
+    function autoScrollLoop() {
+      slider.scrollLeft += 0.5;
+      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+        slider.scrollLeft = 0;
+      }
+      autoScroll = requestAnimationFrame(autoScrollLoop);
+    }
+    function startAutoScroll() {
+      autoScroll = requestAnimationFrame(autoScrollLoop);
+    }
+    function stopAutoScroll() {
+      cancelAnimationFrame(autoScroll);
+    }
+
+    startAutoScroll();
+
+    // === السحب بالماوس ===
+    slider.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      stopAutoScroll();
+      slider.classList.add("dragging");
+    });
+
+    slider.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    slider.addEventListener("mouseup", () => {
+      isDragging = false;
+      slider.classList.remove("dragging");
+      startAutoScroll();
+    });
+
+    slider.addEventListener("mouseleave", () => {
+      if (isDragging) {
+        isDragging = false;
+        slider.classList.remove("dragging");
+        startAutoScroll();
+      }
+    });
+
+    // === السحب بالتاتش ===
+    slider.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX;
+      scrollLeft = slider.scrollLeft;
+      stopAutoScroll();
+    });
+
+    slider.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX;
+      const walk = (x - startX) * 1.5;
+      if (Math.abs(walk) > 10) e.preventDefault();
+      slider.scrollLeft = scrollLeft - walk;
+    }, { passive: false });
+
+    slider.addEventListener("touchend", () => {
+      isDragging = false;
+      startAutoScroll();
+    });
+
+    slider.addEventListener("mouseenter", stopAutoScroll);
+    slider.addEventListener("mouseleave", () => {
+      if (!isDragging) startAutoScroll();
+    });
+  </script>
 
 
 
