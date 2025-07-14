@@ -16,17 +16,16 @@
 
 .product-slider {
   display: flex;
-  flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 16px;
-  padding: 0 10px;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
-  scrollbar-width: none;
+  padding: 10px;
   width: 100%;
   max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  touch-action: none; /* ❗ مهم لمتصفحات سامسونج */
 }
+
 
 #slider {
   -webkit-overflow-scrolling: touch;

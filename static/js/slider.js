@@ -66,13 +66,14 @@
       stopAutoScroll();
     });
 
-    slider.addEventListener("touchmove", (e) => {
-      if (!isDragging) return;
-      const x = e.touches[0].pageX;
-      const walk = (x - startX) * 1.5;
-      if (Math.abs(walk) > 10) e.preventDefault();
-      slider.scrollLeft = scrollLeft - walk;
-    }, { passive: false });
+slider.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const x = e.touches[0].pageX;
+  const walk = (x - startX) * 1.5;
+  if (Math.abs(walk) > 5) e.preventDefault(); // تمنع السحب العمودي
+  slider.scrollLeft = scrollLeft - walk;
+}, { passive: false }); // ✅ ضروري لمتصفحات سامسونج
+
 
     slider.addEventListener("touchend", () => {
       isDragging = false;
