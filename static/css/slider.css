@@ -16,18 +16,23 @@
 
 .product-slider {
   display: flex;
+  flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 16px;
-  padding: 10px 12px 20px;
+  padding: 0 10px;
   -webkit-overflow-scrolling: touch;
-  touch-action: auto;
-  white-space: nowrap;
+  touch-action: pan-x;
   scrollbar-width: none;
-width: 100%;
-max-width: 100%;
- /* يمنع الانكماش */
+  width: 100%;
+  max-width: 100%;
 }
+
+#slider {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x; /* أو auto */
+}
+
 
 
     .product-slider::-webkit-scrollbar {
