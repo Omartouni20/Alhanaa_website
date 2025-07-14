@@ -458,7 +458,7 @@ h5.product-title {
 
 /* داخل الكارت */
 .product-inner {
-  border-bottom: 1px solid #ccc;
+  /*border-bottom: 1px solid #ccc;*/
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
@@ -1156,41 +1156,47 @@ transform: scale(1);
 }
 
 @media (max-width: 767.98px) {
-  .availability-table thead {
-    display: none;
+/* الصور والبادجات الافتراضية - للكمبيوتر */
+.fruit-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.fruit-img:hover {
+  transform: scale(1.2);
+}
+
+.availability-table tbody tr:hover {
+  background-color: #f1fdf3;
+  transition: background-color 0.3s ease;
+}
+
+/* استجابة الموبايل فقط */
+@media (max-width: 768px) {
+  .availability-table {
+    font-size: 10px;
   }
 
-  .availability-table, .availability-table tbody, .availability-table tr, .availability-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .availability-table tr {
-    margin-bottom: 1rem;
-    border: 1px solid #dee2e6;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    background-color: #fff;
-  }
-
+  .availability-table th,
   .availability-table td {
-    text-align: left;
-    padding-left: 50%;
-    position: relative;
-    border: none;
-    border-bottom: 1px solid #eee;
+    font-size: 10px;
+    padding: 2px 4px;
+    white-space: nowrap;
   }
 
-  .availability-table td::before {
-    position: absolute;
-    top: 0.6rem;
-    left: 0.75rem;
-    width: 45%;
-    white-space: nowrap;
-    font-weight: bold;
-    color: #3A986C;
-    content: attr(data-label);
+  .fruit-img {
+    width: 16px;
+    height: 16px;
   }
+
+  .availability-table .badge {
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+}
+
 }
 
 /* ?================== START  CONTACT =============== */
@@ -2651,4 +2657,31 @@ background-color: #0056b3;
   border-color: #f7af29;
   background-color: #fffbea;
   color: #000;
+}
+.product-timeline {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.product-timeline strong {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #3A986C;
+}
+
+.product-timeline .badge {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+.product-timeline .bg-success {
+  background-color: #3A986C !important;
+}
+
+.product-timeline .bg-secondary {
+  background-color: #d4d4d4 !important;
+  color: #333;
 }
