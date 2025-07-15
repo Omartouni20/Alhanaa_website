@@ -1,86 +1,38 @@
-   const slider = document.getElementById("slider");
-    let isDragging = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    // fallback للمتصفحات القديمة
-    window.requestAnimationFrame = window.requestAnimationFrame || function(cb) {
-      return setTimeout(cb, 16);
-    };
-    window.cancelAnimationFrame = window.cancelAnimationFrame || clearTimeout;
-
-    // === التمرير التلقائي ===
-    let autoScroll;
-    function autoScrollLoop() {
-      slider.scrollLeft += 1;
-      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-        slider.scrollLeft = 0;
-      }
-      autoScroll = requestAnimationFrame(autoScrollLoop);
+$(document).ready(function(){
+  $('.product-carousel').owlCarousel({
+    loop: true,
+    margin: 25,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 1,     // يمشي على طول
+    smartSpeed: 2500,       // يخليه يمشي ببطء وسلاسة
+    autoplayHoverPause: false,
+    touchDrag: true,
+    mouseDrag: true,
+    responsive: {
+      0: { items: 2 },
+      576: { items: 2 },
+      768: { items: 3 },
+      992: { items: 4 }
     }
-    function startAutoScroll() {
-      autoScroll = requestAnimationFrame(autoScrollLoop);
-    }
-    function stopAutoScroll() {
-      cancelAnimationFrame(autoScroll);
-    }
+  });
+});
 
-    startAutoScroll();
+// لما المستخدم يضغط على كارت المنتج في الموبايل، بدّل الصور يدويًا
+$('.product-item').on('touchstart', function () {
+  const imgDefault = $(this).find('.default-img');
+  const imgHover = $(this).find('.hover-img');
 
-    // === السحب بالماوس ===
-    slider.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-      stopAutoScroll();
-      slider.classList.add("dragging");
-    });
+  imgDefault.css('opacity', '0');
+  imgHover.css('opacity', '1');
+});
 
-    slider.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      slider.scrollLeft = scrollLeft - walk;
-    });
+// ولما يسيب (release) يرجّع الصورة الأصلية
+$('.product-item').on('touchend', function () {
+  const imgDefault = $(this).find('.default-img');
+  const imgHover = $(this).find('.hover-img');
 
-    slider.addEventListener("mouseup", () => {
-      isDragging = false;
-      slider.classList.remove("dragging");
-      startAutoScroll();
-    });
-
-    slider.addEventListener("mouseleave", () => {
-      if (isDragging) {
-        isDragging = false;
-        slider.classList.remove("dragging");
-        startAutoScroll();
-      }
-    });
-
-    // === السحب بالتاتش ===
-    slider.addEventListener("touchstart", (e) => {
-      isDragging = true;
-      startX = e.touches[0].pageX;
-      scrollLeft = slider.scrollLeft;
-      stopAutoScroll();
-    });
-
-slider.addEventListener("touchmove", (e) => {
-  if (!isDragging) return;
-  const x = e.touches[0].pageX;
-  const walk = (x - startX) * 1.5;
-  if (Math.abs(walk) > 5) e.preventDefault(); // تمنع السحب العمودي
-  slider.scrollLeft = scrollLeft - walk;
-}, { passive: false }); // ✅ ضروري لمتصفحات سامسونج
-
-
-    slider.addEventListener("touchend", () => {
-      isDragging = false;
-      startAutoScroll();
-    });
-
-    slider.addEventListener("mouseenter", stopAutoScroll);
-    slider.addEventListener("mouseleave", () => {
-      if (!isDragging) startAutoScroll();
-    });
+  imgDefault.css('opacity', '1');
+  imgHover.css('opacity', '0');
+});
